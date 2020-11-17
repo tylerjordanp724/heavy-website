@@ -1,0 +1,43 @@
+a.btn {
+    display: flex;
+    width: auto;
+    padding: 16px 20px;
+    border: 1px solid $white;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: space-between;
+    @include font-size(20);
+    @include line-height(22);
+
+    @include breakFirst($screen-sm) {
+        width: fit-content;
+    }
+
+    .btn-text {
+        color: $white;
+        text-align: left;
+        margin-right: 75px;
+    }
+
+    .btn-arrow {
+        display: block;
+        width: 16px;
+        height: 1px;
+        background-color: $white;
+        
+
+        &:after {
+            content: '';
+            display: inline-block;
+            position: relative;
+            width: 11px;
+            height: 11px;
+            border: 1px solid $white;
+            border-top: 0;
+            border-left: 0;
+            transform: translateY(-11px) translateX(3px) rotate(-45deg);
+        }
+    }
+
+
+}

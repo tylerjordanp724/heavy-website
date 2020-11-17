@@ -2,3 +2,40 @@ footer {
     padding: 43.57px 25px;
     background-color: $black;
 }
+
+footer .footer-col {
+    margin-bottom: 44px;
+    color: $white;
+    @include font-size(17);
+
+    h5 {
+        text-transform: capitalize;
+    }
+
+    p {
+        color: $white;
+        a {
+            color: $white;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include breakFirst($screen-sm) {
+            display: block;
+        }
+
+        li {
+            width: 50%;
+        }
+
+        li a {
+            color: $white;
+            text-decoration: underline;
+        }
+    }
+}
