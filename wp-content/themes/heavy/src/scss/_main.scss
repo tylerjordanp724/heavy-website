@@ -1,1 +1,7 @@
-html, body { }
+html, body { 
+    font-family: $fontFamily;
+}
+
+p, a {
+    color: $black;
+}
