@@ -12,7 +12,7 @@
 ?>
 
 	<footer class="footer">
-		<div class="footer-container no-gutters d-md-flex">
+		<div class="footer-container container m-auto no-gutters d-md-flex">
 			<div class="footer-col d-md-none">
 				<a class="btn"><span class="btn-text">Contact Us</span><span class="btn-arrow"></span></a>
 			</div>

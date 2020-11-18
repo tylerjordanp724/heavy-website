@@ -17,10 +17,6 @@ get_header();
 
 	<div id="primary" class="site-main">
 
-	<?php if(have_rows('flexible_content_blocks')):?>
-		<?php while(have_rows('flexible_content_blocks')):?>we have rows<?php endwhile;?>
-	<?php endif;?>
-
 	</div><!-- #main -->
 
 <?php

@@ -1,0 +1,12 @@
+.hero {
+    position: relative;
+
+    .hero__wrapper {
+        position: relative;
+        margin-top: 94px;
+    }
+    
+    .hero__wrapper h1 {
+        @include font-size(54);
+    }
+}

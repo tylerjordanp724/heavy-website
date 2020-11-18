@@ -24,17 +24,19 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<header id="masthead" class="site-header row no-gutters justify-content-between align-items-center">
-		<a class="logo" href="<?php echo get_option('home');?>">
-			<img src="<?php echo bloginfo('template_url');?>/img/heavy-logo.png" />
-		</a>
-		<nav id="site-navigation" class="main-navigation">
-			<?php wp_nav_menu(
-				array(
-					'container' => ' ',
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);?>
-		</nav><!-- #site-navigation -->
+	<header id="masthead" class="site-header">
+		<div class="site-header-wrap container m-auto d-flex justify-content-between align-items-center">
+			<a class="logo" href="<?php echo get_option('home');?>">
+				<img src="<?php echo bloginfo('template_url');?>/img/heavy-logo.png" />
+			</a>
+			<nav id="site-navigation" class="main-navigation">
+				<?php wp_nav_menu(
+					array(
+						'container' => ' ',
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);?>
+			</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
