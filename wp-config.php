@@ -18,6 +18,12 @@
  * @package WordPress
  */
 
+@ini_set( 'upload_max_filesize' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'memory_limit', '256M' );
+@ini_set( 'max_execution_time', '300' );
+@ini_set( 'max_input_time', '300' );
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'heavy_db' );
@@ -88,3 +94,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+

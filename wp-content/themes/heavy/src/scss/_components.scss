@@ -1,0 +1,29 @@
+/* Components */
+
+/*
+Hero
+==================
+*/
+.hero__col--links {
+    ul.link__list {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+/*
+Feature
+==================
+*/
+.feature--w-video .feature__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    color: $white;
+    visibility: hidden;
+    opacity: 0;
+    @include background-opacity($black, 0.5);
+}

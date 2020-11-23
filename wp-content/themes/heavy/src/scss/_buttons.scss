@@ -13,13 +13,13 @@ a.btn {
         width: fit-content;
     }
 
-    .btn-text {
+    .btn__text {
         color: $white;
         text-align: left;
         margin-right: 75px;
     }
 
-    .btn-arrow {
+    .btn__arrow {
         display: block;
         width: 16px;
         height: 1px;
@@ -40,4 +40,68 @@ a.btn {
     }
 
 
+}
+
+a.link--w-arrow {
+    display: flex;
+    align-items: center;
+    width: auto;
+    width: fit-content;
+    text-decoration: none;
+
+    &:hover {
+        color: $black;
+        text-decoration: none;
+    }
+
+    span.link__arrow {
+        display: block;
+        width: 10px;
+        height: 1px;
+        background-color: $black;
+        margin-right: 5px;
+    }
+
+    span.link__arrow:after {
+        display: block;
+        content: '';
+        width: 5px;
+        height: 5px;
+        border: 1px solid $black;
+        position: relative;
+        transform: translate(5px, -2px) rotate(45deg);
+        border-left: 0;
+        border-bottom: 0;
+    }
+
+    &-white {
+        color: $white;
+        display: flex;
+        align-items: center;
+        width: auto;
+        width: fit-content;
+        text-decoration: none;
+
+        span.link__arrow {
+            display: block;
+            width: 10px;
+            height: 1px;
+            background-color: $white;
+            margin-right: 5px;
+        }
+    
+        span.link__arrow:after {
+            display: block;
+            content: '';
+            width: 5px;
+            height: 5px;
+            border: 1px solid $white;
+            position: relative;
+            transform: translate(5px, -2px) rotate(45deg);
+            border-left: 0;
+            border-bottom: 0;
+        }
+
+        
+    }
 }

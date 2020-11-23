@@ -158,6 +158,7 @@ function heavy_assets() {
 add_action( 'wp_enqueue_scripts', 'heavy_assets' );
 
 
+
 /**
  * Implement the Custom Header feature.
  */
