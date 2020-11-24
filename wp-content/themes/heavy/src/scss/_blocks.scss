@@ -60,6 +60,17 @@ Features
             height: 80vh;
             overflow: hidden;
 
+            &:hover .feature__overlay {
+                opacity: 1;
+                visibility: visible;
+    
+                .feature__col {
+                    transform: translateX(0);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
             .feature__video {
                 transform: scale(0.5);
             }

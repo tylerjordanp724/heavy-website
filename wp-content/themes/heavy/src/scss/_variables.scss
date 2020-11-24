@@ -24,6 +24,9 @@ $headingsFontFamily: $fontFamily !default;
 $headingsFontWeight: 300 !default;
 $headingsColor: inherit !default;
 
+// Cubic Bezier
+$cbTrans: cubic-bezier(.83,-0.01,.66,1);
+
 // Breakpoints
 // Extra extra small screen / phone
 $screen-xxs:                 321px !default;

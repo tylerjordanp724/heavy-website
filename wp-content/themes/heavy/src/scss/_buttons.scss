@@ -49,17 +49,13 @@ a.link--w-arrow {
     width: fit-content;
     text-decoration: none;
 
-    &:hover {
-        color: $black;
-        text-decoration: none;
-    }
-
     span.link__arrow {
         display: block;
         width: 10px;
         height: 1px;
         background-color: $black;
         margin-right: 5px;
+        transition: width 0.3s $cbTrans;
     }
 
     span.link__arrow:after {
@@ -72,6 +68,7 @@ a.link--w-arrow {
         transform: translate(5px, -2px) rotate(45deg);
         border-left: 0;
         border-bottom: 0;
+        transition: transform 0.3s $cbTrans;
     }
 
     &-white {
@@ -88,6 +85,7 @@ a.link--w-arrow {
             height: 1px;
             background-color: $white;
             margin-right: 5px;
+            transition: width 0.3s $cbTrans;
         }
     
         span.link__arrow:after {
@@ -100,8 +98,32 @@ a.link--w-arrow {
             transform: translate(5px, -2px) rotate(45deg);
             border-left: 0;
             border-bottom: 0;
+            transition: transform 0.3s $cbTrans;
         }
 
-        
+        &:hover {
+            text-decoration: none;
+    
+            span.link__arrow {
+                width: 15px;
+            }
+    
+            span.link__arrow:after {
+                transform: translate(10px, -2px) rotate(45deg);
+            }
+        }
+    }
+
+    &:hover {
+        color: $black;
+        text-decoration: none;
+
+        span.link__arrow {
+            width: 15px;
+        }
+
+        span.link__arrow:after {
+            transform: translate(10px, -2px) rotate(45deg);
+        }
     }
 }

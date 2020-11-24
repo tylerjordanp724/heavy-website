@@ -25,10 +25,24 @@ Feature
     color: $white;
     visibility: visible;
     opacity: 1;
+    transition: opacity 0.3s $cbTrans, visibility 0.3s $cbTrans;
     @include background-opacity($black, 0.5);
+
+    .feature__col {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+        transition: 0.3s transform 0.5s $cbTrans, 0.3s opacity 0.5s $cbTrans, 0.3s visibility 0.5s $cbTrans;
+    }
 
     @include breakFirst($screen-md) {
         visibility: hidden;
         opacity: 0;
+
+        .feature__col {
+            transform: translateY(60px);
+            visibility: hidden;
+            opacity: 0;
+        }
     }
 }
