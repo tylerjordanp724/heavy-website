@@ -32,7 +32,7 @@ Feature
         transform: translateY(0);
         visibility: visible;
         opacity: 1;
-        transition: 0.3s transform 0.5s $cbTrans, 0.3s opacity 0.5s $cbTrans, 0.3s visibility 0.5s $cbTrans;
+        transition: transform 1s $cbTrans, opacity 1s $cbTrans, visibility 1s $cbTrans;
     }
 
     @include breakFirst($screen-md) {
