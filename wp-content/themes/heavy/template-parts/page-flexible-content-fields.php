@@ -17,6 +17,9 @@
     
     <?php elseif($content_block == 'feature_basic'):?>
         <?php get_template_part('template-parts/blocks/block', 'feature--basic');?>
-    
+    <?php elseif($content_block == 'featured_post_teaser'):?>
+        <?php get_template_part('template-parts/blocks/block', 'featured-post-teaser');?>
+    <?php elseif($content_block == 'featured_work_teaser'):?>
+        <?php get_template_part('template-parts/blocks/block', 'featured-work-teaser');?>
     <?php endif;?>
 <?php endwhile; endif;?>

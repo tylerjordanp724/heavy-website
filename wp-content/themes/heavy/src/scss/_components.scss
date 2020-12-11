@@ -46,3 +46,58 @@ Feature
         }
     }
 }
+
+/*
+Teasers
+==================
+*/
+
+// Teaser - Flex
+.teaser--flex .teaser__col {
+    padding: 0;
+}
+
+.teaser--flex .teaser__col--text a.f--label {
+    display: block;
+    width: auto;
+    width: fit-content;
+    background-color: $black;
+    color: $white;
+    padding: 6px 10px;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+}
+
+.teaser--flex .teaser__col h3 {
+    display: block;
+    margin-bottom: 30px;
+    width: 85%;
+}
+
+// Teaser Header
+.teaser-header h2 {
+    display: block;
+    width: fit-content;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: relative;
+        text-decoration: underline;
+        // height: 3px;
+        // background-color: $white;
+        
+    }
+}
+
+.teaser-header__col p {
+    display: block;
+    max-width: 370px;
+}
+

@@ -8,27 +8,29 @@ $orientation = get_sub_field('orientation');
 $headline = get_sub_field('headline');
 $text = get_sub_field('text');
 $link = get_sub_field('link');
-
-function bg_color() {
-    $bg_color = get_sub_field('background_color');
-    if(!empty($bg_color)) {
-        echo 'style="background-color:'.$bg_color.';"';
-    }
-}
+$image = get_sub_field('image');
 ?>
 <?php if($orientation == 'landscape'):?>
-    <div class="feature feature--basic-wide row-inside--lg" <?php bg_color();?>>
+    <div class="feature feature-basic--wide row-inside--lg" <?php bg_color();?>>
         <div class="feature__wrap container">
-            <div class="feature__img"></div>
+            <?php if(!empty($image)):?>
+                <div class="feature__img img--wide">
+                    <figure>
+                        <picture>
+                            <img src="<?php echo $image;?>"/>
+                        </picture>
+                    </figure>
+                </div>
+            <?php endif;?>
             <div class="feature__text d-md-flex text-white">
-                <div class="feature__title col">
+                <div class="feature__title row-outside--md col">
                     <?php if(!empty($headline)):?>
                         <h2 class="f--headline"><?php echo $headline?></h2>
                     <?php endif;?>
                 </div>
                 <div class="feature__text col">
                     <?php if(!empty($text)):?>
-                        <p class="text-white"><?php echo $text?></p>
+                        <p class="text-white row-outside--md"><?php echo $text?></p>
                     <?php endif;?>
                     <?php if(!empty($link)):
                         $link_text = $link['title'];
@@ -43,5 +45,29 @@ function bg_color() {
         </div>
     </div>
 <?php elseif($orientation == 'portrait'):?>
-    <div class="feature feature--basic-tall row-inside--lg" <?php bg_color();?>></div>
+    <div class="feature feature-basic--tall d-md-flex align-items-center" <?php bg_color();?>>
+        <?php if(!empty($image)):?>
+            <div class="feature__img img--tall col-md-6">
+                <figure>
+                    <picture>
+                        <img src="<?php echo $image;?>"/>
+                    </picture>
+                </figure>
+            </div>
+        <?php endif;?>
+        <?php if(!empty($text) || !empty($headline)):?>
+            <div class="feature__text text-white row-inside--md col-md-6 px-md-5">
+                <h2 class="f--headline"><?php echo $headline?></h2>
+                <p class="text-white"><?php echo $text;?></p>
+                <?php if(!empty($link)):
+                    $link_text = $link['title'];
+                    $link_url = $link['url'];    
+                ?>
+                    <a class="link--w-arrow-white" href="<?php echo $link_url;?>">
+                        <span class="link__arrow"></span><span class="link__text"><?php echo $link_text;?></span>
+                    </a>
+                <?php endif;?>
+            </div>
+        <?php endif;?>
+    </div>
 <?php endif;?>

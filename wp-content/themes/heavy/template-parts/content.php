@@ -10,54 +10,22 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				heavy_posted_on();
-				heavy_posted_by();
-				?>
+	<div class="post__hero row-outside--xl">
+		<!-- Hero goes here -->
+	</div>
+	<div class="post__body container">
+		<div class="post__header">
+			<div class="post__meta row-outside--md">
+				<?php heavy_posted_on();?>
 			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+			<div class="post__title row-outside--xl">
+				<?php the_title( '<h1 class="f--headline">', '</h1>' );?>
+			</div>
+		</div><!-- .entry-header -->
 
-	<?php heavy_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'heavy' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'heavy' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php heavy_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		<div class="post__content row-outside--xl">
+			<?php the_content();?>
+		</div>
+	</div>
+	<!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

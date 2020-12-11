@@ -11,9 +11,8 @@ $feature_link = get_sub_field('link');
 
 <div class="feature feature--w-video">
     <div class="feature__video">
-        <video width height controls autoplay>
-            <source src="<?php echo $feature_video;?>" type="video/mp4"/>
-        </video>
+        
+        <iframe width="560" height="315" src="<?php echo $feature_video;?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls="0" modestbranding="1"></iframe>
     </div>
     <?php if(!empty($feature_text)):?>
         <div class="feature__overlay row-inside--lg container-fluid d-flex align-items-end">

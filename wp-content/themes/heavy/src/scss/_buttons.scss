@@ -48,6 +48,8 @@ a.link--w-arrow {
     width: auto;
     width: fit-content;
     text-decoration: none;
+    transform-origin: -50% 0;
+    @include font-size(18);
 
     span.link__arrow {
         display: block;
@@ -78,6 +80,7 @@ a.link--w-arrow {
         width: auto;
         width: fit-content;
         text-decoration: none;
+        @include font-size(18);
 
         span.link__arrow {
             display: block;
