@@ -7,6 +7,7 @@
 $title = get_sub_field('title');
 $link = get_sub_field('link');
 $desc = get_sub_field('description');
+$featured_work = get_sub_field('featured_work');
 ?>
 <div class="teaser-row teaser--featured-work bg--gray-1 row-inside--md">
     <div class="teaser-row__container container">
@@ -25,6 +26,21 @@ $desc = get_sub_field('description');
                 </a>
             </div>
         </div>
-        
+        <?php if($featured_work):?>
+            <div class="teaser-group d-md-flex">
+                <?php foreach($featured_work as $post): setup_postdata($post);
+                    $teaser_title = get_field('display_title', $post);
+                    $teaser_desc = get_field('description', $post);
+                ?>
+                    <div class="teaser col">
+                        <?php if(!empty($teaser_title)):?>
+                            <h4><?php echo $teaser_title;?></h4>    
+                        <?php endif;?>
+                    </div>
+
+                        <?php endforeach; wp_reset_postdata();?>
+            </div>    
+        <?php endif;?>
     </div>
+    
 </div>
