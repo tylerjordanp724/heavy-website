@@ -15,6 +15,10 @@ Hero
     .hero__wrapper {
         position: relative;
         top: 94px;
+
+        @include breakFirst($screen-md) {
+            top: 10%;
+        }
     }
 
     &--black {

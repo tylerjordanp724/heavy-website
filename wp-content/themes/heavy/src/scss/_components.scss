@@ -4,11 +4,39 @@
 Hero
 ==================
 */
+
+// Text Hero
+.hero__col--text h1.f--headline {
+    @include font-size(48);
+
+    @include breakFirst($screen-md) {
+        @include font-size(63);
+    }
+}
+
 .hero__col--links {
     ul.link__list {
         list-style: none;
         padding: 0;
     }
+}
+
+// Post Hero
+.post__hero figure picture {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 35%;
+}
+
+.post__hero figure picture img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /*
@@ -73,7 +101,6 @@ Teasers
 
 .teaser--flex .teaser__col h3 {
     display: block;
-    margin-bottom: 30px;
     width: 85%;
 }
 
@@ -89,10 +116,7 @@ Teasers
         display: block;
         width: 100%;
         position: relative;
-        text-decoration: underline;
-        // height: 3px;
-        // background-color: $white;
-        
+        text-decoration: underline;    
     }
 }
 
@@ -101,3 +125,24 @@ Teasers
     max-width: 370px;
 }
 
+.teaser-group .teaser {
+    padding: 0;
+    margin-bottom: 60px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakFirst($screen-sm) {
+        &:first-child {
+            padding-right: 15px;
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-left: 15px;
+            padding-right: 0;
+        }
+    }
+    
+}

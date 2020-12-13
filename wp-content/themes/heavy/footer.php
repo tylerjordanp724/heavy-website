@@ -12,27 +12,27 @@
 ?>
 
 	<footer class="footer">
-		<div class="footer__container container m-auto no-gutters d-md-flex">
+		<div class="footer__container container m-auto no-gutters d-md-flex py-4">
 			<div class="footer__col d-md-none">
 				<a class="btn">
 					<span class="btn__text">Contact Us</span><span class="btn__arrow"></span>
 				</a>
 			</div>
 			<div class="footer__col-wrap col-md d-md-flex">
-				<div class="footer__col col-md">
+				<div class="footer__col col-md px-0">
 					<h5>philadelphia</h5>
 					<p>200 Locust Street, Unit 7CN<p/>
 					<p>Philadelphia, PA 19106<p/><br>
 					<p><a href="tel:2159482451">(215) 948-2451</a><p/>
 				</div>
-				<div class="footer__col col-md">
+				<div class="footer__col col-md px-0">
 					<h5>san diego</h5>
 					<p>2869 Historic Decatur Road<p/>
 					<p>San Diego, CA 92106<p/>
 				</div>
 			</div>
 			<div class="footer__col-wrap col-md d-md-flex">
-				<div class="footer__col col-md">
+				<div class="footer__col col-md px-0">
 					<ul>
 						<li><a href="">Instagram</a></li>
 						<li><a href="">Twitter</a></li>

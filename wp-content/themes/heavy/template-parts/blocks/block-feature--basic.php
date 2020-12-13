@@ -11,10 +11,10 @@ $link = get_sub_field('link');
 $image = get_sub_field('image');
 ?>
 <?php if($orientation == 'landscape'):?>
-    <div class="feature feature-basic--wide row-inside--lg" <?php bg_color();?>>
+    <div class="feature feature-basic--wide row-inside--xl" <?php bg_color();?>>
         <div class="feature__wrap container">
             <?php if(!empty($image)):?>
-                <div class="feature__img img--wide">
+                <div class="feature__img img--wide row-outside--lg">
                     <figure>
                         <picture>
                             <img src="<?php echo $image;?>"/>
@@ -23,14 +23,14 @@ $image = get_sub_field('image');
                 </div>
             <?php endif;?>
             <div class="feature__text d-md-flex text-white">
-                <div class="feature__title row-outside--md col">
+                <div class="feature__title row-outside--md col px-0">
                     <?php if(!empty($headline)):?>
-                        <h2 class="f--headline"><?php echo $headline?></h2>
+                        <h2 class="f--headline"><?php echo $headline;?></h2>
                     <?php endif;?>
                 </div>
-                <div class="feature__text col">
+                <div class="feature__text col px-0">
                     <?php if(!empty($text)):?>
-                        <p class="text-white row-outside--md"><?php echo $text?></p>
+                        <p class="text-white row-outside--md"><?php echo $text;?></p>
                     <?php endif;?>
                     <?php if(!empty($link)):
                         $link_text = $link['title'];
@@ -56,9 +56,9 @@ $image = get_sub_field('image');
             </div>
         <?php endif;?>
         <?php if(!empty($text) || !empty($headline)):?>
-            <div class="feature__text text-white row-inside--md col-md-6 px-md-5">
-                <h2 class="f--headline"><?php echo $headline?></h2>
-                <p class="text-white"><?php echo $text;?></p>
+            <div class="feature__text text-white row-inside--md col-md-6 px-4 py-5">
+                <h2 class="f--headline d-block mb-4"><?php echo $headline?></h2>
+                <p class="text-white d-block mb-4"><?php echo $text;?></p>
                 <?php if(!empty($link)):
                     $link_text = $link['title'];
                     $link_url = $link['url'];    

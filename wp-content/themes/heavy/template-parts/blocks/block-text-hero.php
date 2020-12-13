@@ -9,13 +9,13 @@
 
 <div class="hero hero--<?php echo $hero_bg_color;?> row-inside--lg">
     <div class="hero__wrapper row-inside--lg container d-md-flex align-items-end">
-        <div class="hero__col--text col-md-8">
+        <div class="hero__col--text col-md-8 mb-4 px-0">
             <?php if(!empty($hero_text)):?>
                 <h1 class="f--headline"><?php echo $hero_text;?></h1>
             <?php endif;?>
         </div>
         <?php if(have_rows('links')): $link_count;?>
-            <div class="hero__col--links col-md">
+            <div class="hero__col--links col-md px-0">
                 <ul class="link__list">
                     <?php while(have_rows('links')): the_row();
                         $link = get_sub_field('url');

@@ -9,14 +9,14 @@ $link = get_sub_field('link');
 $desc = get_sub_field('description');
 $featured_work = get_sub_field('featured_work');
 ?>
-<div class="teaser-row teaser--featured-work bg--gray-1 row-inside--md">
+<div class="teaser-row teaser--featured-work bg--gray-1 row-inside--lg">
     <div class="teaser-row__container container">
-        <div class="teaser-header row-y-inside--md row-outside--md d-md-flex justify-content-between">
+        <div class="teaser-header row-outside--md d-md-flex justify-content-between">
             <?php if(!empty($title)):?>
                 <div class="teaser-header__col">
-                    <h2 class="f--headline text-white"><?php echo $title;?></h2>
+                    <h2 class="f--headline text-white mb-3"><?php echo $title;?></h2>
                     <?php if(!empty($desc)):?>
-                        <p class="text-white"><?php echo $desc;?></p>    
+                        <p class="text-white mb-3"><?php echo $desc;?></p>    
                     <?php endif;?>
                 </div>
             <?php endif;?>
@@ -26,19 +26,36 @@ $featured_work = get_sub_field('featured_work');
                 </a>
             </div>
         </div>
-        <?php if($featured_work):?>
+
+        <?php if(!empty($featured_work)):?>
             <div class="teaser-group d-md-flex">
                 <?php foreach($featured_work as $post): setup_postdata($post);
-                    $teaser_title = get_field('display_title', $post);
-                    $teaser_desc = get_field('description', $post);
+                    $teaser_title = get_field('display_title');
+                    $teaser_desc = get_field('short_description');
+                    $teaser_thumbnail = get_the_post_thumbnail();
+                    $teaser_link = get_the_permalink();
                 ?>
-                    <div class="teaser col">
+                    <div class="teaser col-md">
+                    <?php if(!empty($teaser_thumbnail)):?>
+                        <div class="teaser__col teaser__col--img img--wide-cover mb-4">
+                            <figure>
+                                <picture>
+                                    <?php echo $teaser_thumbnail;?>
+                                </picture>
+                            </figure>
+                        </div>
+                    <?php endif;?>
                         <?php if(!empty($teaser_title)):?>
-                            <h4><?php echo $teaser_title;?></h4>    
+                            <h4 class="text-white d-block mb-3"><?php echo $teaser_title;?></h4>    
                         <?php endif;?>
+                        <?php if(!empty($teaser_desc)):?>
+                            <p class="text-white d-block mb-3"><?php echo $teaser_desc;?></p>    
+                        <?php endif;?>
+                        <a class="link--w-arrow-white" href="<?php echo $teaser_link;?>">
+                            <span class="link__arrow"></span><span class="link__text">Read More</span>
+                        </a>
                     </div>
-
-                        <?php endforeach; wp_reset_postdata();?>
+                <?php endforeach; wp_reset_postdata();?>
             </div>    
         <?php endif;?>
     </div>
