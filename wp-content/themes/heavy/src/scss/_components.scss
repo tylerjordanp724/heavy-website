@@ -1,6 +1,43 @@
 /* Components */
 
 /*
+Contact Form
+==================
+*/
+
+.contact-form h3 {
+
+    text-align: center;
+    display: block;
+    margin-bottom: 60px;
+
+    @include breakFirst($screen-md) {
+        @include font-size(54);
+    }
+}
+
+.contact-form .nf-form-wrap {
+    max-width: 90%;
+    margin: auto;
+}
+
+.contact-form .nf-field-label {
+    margin: auto;
+}
+
+.contact-form .nf-field-element input[type="email"] {
+    border-radius: 0;
+    border: 1px solid $gray1;
+    appearance: none;
+    padding: 15px;
+
+}
+
+.contact-form .nf-field-label {
+    display: none;
+}
+
+/*
 Hero
 ==================
 */

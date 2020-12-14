@@ -18,5 +18,7 @@
         <?php get_template_part('template-parts/blocks/block', 'featured-post-teaser');?>
     <?php elseif($content_block == 'featured_work_teaser'):?>
         <?php get_template_part('template-parts/blocks/block', 'featured-work-teaser');?>
+    <?php elseif($content_block == 'contact_form'):?>
+        <?php get_template_part('template-parts/blocks/block', 'contact-form');?>
     <?php endif;?>
 <?php endwhile; endif;?>
