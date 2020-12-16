@@ -231,6 +231,20 @@ function heavy_case_studies() {
 }
 add_action( 'init', 'heavy_case_studies', 0 );
 
+if( function_exists('acf_add_options_page') )
+{
+    acf_add_options_page(array(
+        'page_title'    => 'Case Study Index',
+        'menu_title'    => 'Case Study Index',
+        'menu_slug'     => 'options_work',
+        'capability'    => 'edit_posts',
+        'parent_slug'   => 'edit.php?post_type=case_study',
+        'position'      => false,
+        'icon_url'      => 'dashicons-portfolio',
+        'redirect'      => false,
+    ));
+}
+
 
 /**
  * Implement the Custom Header feature.
