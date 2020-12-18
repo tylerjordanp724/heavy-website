@@ -24,12 +24,12 @@ get_header();
             $vimeo_id = $hero['vimeo_id'];    
         ?>
             <?php if(!empty($video_url)):?>
-                <video controls="false" autoplay="true" mute loop>
+                <video class="hero__video" controls="false" autoplay="true" mute loop>
                     <source src="<?php echo $video_url;?>">
                 </video>
-            <?php elseif(!empty($video_url)):?>
-                <video controls="false" autoplay="true" mute loop>
-                    <source src="<?php echo $video_url;?>">
+            <?php elseif(!empty($vimeo_id)):?>
+                <video class="hero__video" controls="false" autoplay="true" mute loop>
+                    <source src="<?php echo $vimeo_id;?>">
                 </video>
             <?php endif;?>
         
