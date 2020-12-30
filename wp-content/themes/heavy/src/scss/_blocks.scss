@@ -1,43 +1,41 @@
 /*
-Hero
+Carousel
 ==================
 */
+.carousel--case-study .carousel__container {
+    height: 300px;
 
-.hero {
-    position: relative;
-    height: auto;
+    @include breakFirst($screen-sm) {
+        height: 400px;
+    }
 
     @include breakFirst($screen-md) {
-        height: 75vh;
+        height: 500px;
     }
 
+    .flickity-viewport {
+        height: 100% !important;
+    }
 
-    .hero__wrapper {
-        position: relative;
-        top: 94px;
+    .flickity-page-dots {
+        //position: relative;
+        // margin-top: -60px;
+        bottom: 8%;
+    }
+
+    .carousel__image {
+        width: 100%;
+        
+        figure {
+            margin-bottom: 0;
+        }
 
         @include breakFirst($screen-md) {
-            top: 10%;
-        }
-    }
-
-    &--black {
-        background-color: $black;
-        color: $white;
-
-        a, a:hover {
-            color: $white;
-        }
-
-        a span.link__arrow {
-            background-color: $white;
-        }
-
-        a span.link__arrow:after {
-            border-color: $white;
+            width: 80%;
         }
     }
 }
+
 
 /*
 Features
@@ -78,11 +76,52 @@ Features
             .feature__video {
                 transform: scale(0.7);
                 box-shadow: 0 50px 50px rgba(0,0,0,0.5);
-
             }
         }
     }
     
+}
+
+
+/*
+Hero
+==================
+*/
+
+.hero {
+    position: relative;
+    height: auto;
+
+    @include breakFirst($screen-md) {
+        height: 75vh;
+    }
+
+
+    .hero__wrapper {
+        position: relative;
+        top: 94px;
+
+        @include breakFirst($screen-md) {
+            top: 10%;
+        }
+    }
+
+    &--black {
+        background-color: $black;
+        color: $white;
+
+        a, a:hover {
+            color: $white;
+        }
+
+        a span.link__arrow {
+            background-color: $white;
+        }
+
+        a span.link__arrow:after {
+            border-color: $white;
+        }
+    }
 }
 
 
