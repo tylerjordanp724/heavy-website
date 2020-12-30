@@ -88,9 +88,12 @@ get_header();
 <?php endif;?>
 
 <!-- flexible case study content -->
-<?php if(have_rows('flexible_case_study_fields')): while(have_rows('flexible_case_study_fields')): the_row();
+<?php if(have_rows('flexible_case_study_content')): while(have_rows('flexible_case_study_content')): the_row();
     $content_block = get_row_layout();
 ?>
+<?php if($content_block == 'image_carousel'):?>
+   <?php get_template_part('template-parts/blocks/block-carousel','-case-study');?>   
+<?php endif;?>
 <!-- content blocks go here -->
 <?php endwhile; endif;?>
 
