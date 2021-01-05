@@ -18,24 +18,34 @@ Carousel
     }
 
     .flickity-page-dots {
-        //position: relative;
-        // margin-top: -60px;
         bottom: 8%;
     }
 
-    .carousel__image {
+    .carousel__image, .carousel__video {
         width: 100%;
-        
-        figure {
-            margin-bottom: 0;
-        }
 
         @include breakFirst($screen-md) {
             width: 80%;
+            margin-right: 10px;
         }
+    }
+
+    .carousel__image figure {
+        margin-bottom: 0;
     }
 }
 
+.carousel--case-study-video {
+    height: auto;
+    .carousel__video {
+        position: relative;
+        height: 100%;
+
+        video {
+            object-fit: cover;
+        }
+    }
+}
 
 /*
 Features
@@ -80,6 +90,20 @@ Features
         }
     }
     
+}
+
+
+.image-banner__container {
+    height: 300px;
+
+    @include breakFirst($screen-sm) {
+        height: 400px;
+    }
+
+    @include breakFirst($screen-md) {
+        height: 500px;
+    }
+
 }
 
 

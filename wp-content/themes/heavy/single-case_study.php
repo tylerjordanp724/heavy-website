@@ -92,7 +92,11 @@ get_header();
     $content_block = get_row_layout();
 ?>
 <?php if($content_block == 'image_carousel'):?>
-   <?php get_template_part('template-parts/blocks/block-carousel','-case-study');?>   
+   <?php get_template_part('template-parts/blocks/block-carousel','-case-study');?>
+   <?php elseif($content_block == 'video_carousel'):?>
+        <?php get_template_part('template-parts/blocks/block-carousel', '-case-study-video');?>  
+    <?php elseif($content_block == 'image_banner'):?>
+        <?php get_template_part('template-parts/blocks/block', 'image-banner');?>   
 <?php endif;?>
 <!-- content blocks go here -->
 <?php endwhile; endif;?>

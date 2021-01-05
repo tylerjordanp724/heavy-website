@@ -26,12 +26,16 @@ $images = get_sub_field('image_gallery');
         </div>
     <?php endif;?>
 
-    <div class="text-banner container d-md-flex row-inside--md">
-        <div class="text-banner__col text-banner__col--title col-md">
-            this is a text column
+    <?php if(!empty($banner_title)):?>
+        <div class="text-banner container d-md-flex row-inside--md">
+            <div class="text-banner__col text-banner__col--title col-md">
+                <h5><?php echo $banner_title;?></h5>
+            </div>
+            <?php if(!empty($banner_desc)):?>
+                <div class="text-banner__col text-banner__col--body col-md">
+                    <p><?php echo $banner_desc;?></p>
+                </div>
+            <?php endif;?>
         </div>
-        <div class="text-banner__col text-banner__col--body col-md">
-            this is another text column
-        </div>
-    </div>
+    <?php endif;?>
 </div> 
