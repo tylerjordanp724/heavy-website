@@ -54,17 +54,20 @@ get_header();
                         <?php echo $client_name;?>
                     </div>
                 <?php endif;?>
-                <?php if(has_category()):?>
+                <?php if(has_category()):
+                    $categories = get_categories(array(
+                        'exclude' => array(1,3)
+                    ));    
+                ?>
                     <div class="col-md px-0">
                         <h5 class="f--label">Services</h5>
-                        <?php wp_list_categories(
-                            array(
-                                'exclude' => array(1,3),
-                                'title_li' => '',
-                                'separator' => ' / ',
-                                'style' => ''
-                            )
-                        );?>
+                        <div class="list-container list-container--category">
+                            <ul>
+                                <?php foreach($categories as $category):?>
+                                    <li><?php echo $category->name;?></li>
+                                <?php endforeach;?>
+                            </ul>
+                        </div>
                     </div>
                 <?php endif;?>
             </div>
