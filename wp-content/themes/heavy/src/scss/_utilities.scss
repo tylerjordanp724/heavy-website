@@ -73,7 +73,17 @@
         padding-bottom: 56.25%;
     }
 
-    &-cover figure picture img {
+    &-cover-banner figure picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 39%;
+    }
+
+    &-cover figure picture img,  
+    &-cover-banner figure picture img {
         display: block;
         position: absolute;
         width: 100%;

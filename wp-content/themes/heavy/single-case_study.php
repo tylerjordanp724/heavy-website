@@ -96,7 +96,9 @@ get_header();
    <?php elseif($content_block == 'video_carousel'):?>
         <?php get_template_part('template-parts/blocks/block-carousel', '-case-study-video');?>  
     <?php elseif($content_block == 'image_banner'):?>
-        <?php get_template_part('template-parts/blocks/block', 'image-banner');?>   
+        <?php get_template_part('template-parts/blocks/block', 'image-banner');?>
+    <?php elseif($content_block == 'text_banner'):?>
+        <?php get_template_part('template-parts/blocks/block', 'text-banner');?>   
 <?php endif;?>
 <!-- content blocks go here -->
 <?php endwhile; endif;?>
