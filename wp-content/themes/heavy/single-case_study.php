@@ -16,27 +16,26 @@ get_header();
 
 <?php if(!empty($hero)):
     $hero_type = $hero['hero_type'];    
+    $video_url = $hero['video_url'];
+    $vimeo_id = $hero['vimeo_id'];   
 ?>
     <!-- case study hero -->
-    <div class="hero hero--case-study-video">
-        <?php if($hero_type === 'video'):
-            $video_url = $hero['video_url'];
-            $vimeo_id = $hero['vimeo_id'];    
-        ?>
-            <?php if(!empty($video_url)):?>
-                <video class="hero__video" autoplay="true" mute loop>
-                    <source src="<?php echo $video_url;?>">
-                </video>
-            <?php elseif(!empty($vimeo_id)):?>
-                <div class="hero__video">
-				    <iframe src="https://player.vimeo.com/video/<?php echo $vimeo_id;?>" width="640" height="267" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-                </div>
-            <?php endif;?>
-        
-        <?php elseif($hero_type === 'image'):?>
-            <div class="hero__image-wrapper"></div>
+    
+<?php if($hero_type === 'video'):?>
+    <div class="hero hero--case-study-video<?php if(!empty($vimeo_id)){echo'-vimeo';}?>">
+        <?php if(!empty($video_url)):?>
+            <video class="hero__video" autoplay="true" mute loop>
+                <source src="<?php echo $video_url;?>">
+            </video>
+        <?php elseif(!empty($vimeo_id)):?>
+            <iframe src="https://player.vimeo.com/video/<?php echo $vimeo_id;?>" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         <?php endif;?>
     </div>
+    
+    <?php elseif($hero_type === 'image'):?>
+        <div class="hero__image-wrapper"></div>
+    <?php endif;?>
+
 <?php endif;?>
 
 <?php if(!empty($display_title)):
