@@ -21,19 +21,31 @@ get_header();
 ?>
     <!-- case study hero -->
     
-<?php if($hero_type === 'video'):?>
-    <div class="hero hero--case-study-video<?php if(!empty($vimeo_id)){echo'-vimeo';}?>">
+    <?php if($hero_type === 'video'):?>
         <?php if(!empty($video_url)):?>
-            <video class="hero__video" autoplay="true" mute loop>
-                <source src="<?php echo $video_url;?>">
-            </video>
-        <?php elseif(!empty($vimeo_id)):?>
-            <iframe src="https://player.vimeo.com/video/<?php echo $vimeo_id;?>" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div class="hero hero--case-study-video">
+                <video class="hero__video" autoplay="true" mute loop>
+                    <source src="<?php echo $video_url;?>">
+                </video>
+            </div>
         <?php endif;?>
-    </div>
+
+        <?php if(!empty($vimeo_id)):?>
+            <div class="hero hero--case-study-video-vimeo">
+                <iframe src="https://player.vimeo.com/video/<?php echo $vimeo_id;?>" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        <?php endif;?>
     
-    <?php elseif($hero_type === 'image'):?>
-        <div class="hero__image-wrapper"></div>
+    <?php elseif($hero_type === 'image'):
+        $image_url = $hero['image'];    
+    ?>
+        <div class="hero hero--case-study-img">
+            <figure>
+                <picture>
+                    <img src="<?php echo $image_url;?>"/>
+                </picture>
+            </figure>
+        </div>
     <?php endif;?>
 
 <?php endif;?>
