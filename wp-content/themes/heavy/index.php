@@ -11,44 +11,75 @@
  *
  * @package heavy
  */
+global $post;
+
+function get_current_loop_index() {
+	global $wp_query;
+	return $wp_query->current_post + 1;
+}
 
 get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+		<?php if(have_posts()):?>
+			<?php while(get_current_loop_index() === 0): the_post();
+				$post_thumb = get_the_post_thumbnail();
+				$post_author = get_the_author();
+				$post_categories = get_the_category_list();
+				$post_date = get_the_date();
+				$post_title = get_the_title();
+			?>
+				<div class="hero hero--blog bg--gray-1 row-inside--lg d-flex align-items-center">
+					<div class="hero__content--blog container d-md-flex">
+						<?php if(!empty($post_thumb)):?>
+							<div class="hero__img img--wide-cover col-md-6 px-0">
+								<figure>
+									<picture>
+										<img src="<?php echo $post_thumb;?>"/>
+									</picture>
+								</figure>
+							</div>
+						<?php endif;?>
+						<div class="hero__text col-md-6 px-md-5">
+							<span class="text-white">Recent News</span>
+							<div class="post-meta--recent text-white mt-5">
+								<span><?php echo $post_date?></span>
+								<h2 class="d-block mb-5"><?php echo $post_title;?></h2>
+								<a href="<?php echo get_permalink();?>"class="btn btn--white">read more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endwhile;?>
+			<?php if(have_posts()):?>
+				<div class="posts-row row-inside--lg">
+					<div class="posts-row__content container">
+						<h3>Stories<h3/>
+						<?php while(have_posts()): the_post();
+							$post_thumb = get_the_post_thumbnail();
+							$post_author = get_the_author();
+							$post_categories = get_the_category_list();
+							$post_date = get_the_date();
+							$post_title = get_the_title();
+						?>
+							<div class="posts__wrapper d-md-flex row-inside--md px-0">
+								<div class="post-teaser col-md-6 pl-0">
+									<div class="post-teaser__img img--wide-cover">
+										<figure>
+											<picture>
+												<img src="<?php echo $post_thumb;?>"/>
+											</picture>
+										</figure>
+									</div>
+								</div>
+							</div>
+						<?php endwhile;?>
+					<div>
+				</div>
+			<?php endif;?>
+		<?php endif; wp_reset_postdata();?>
+		
 
 	</main><!-- #main -->
 
