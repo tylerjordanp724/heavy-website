@@ -23,15 +23,9 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php
-/**
- * Header Theme Variables
- * 
- */
-$header_theme = get_field('header_theme');
-?>
+
 <div id="page" class="site">
-	<header id="masthead" class="header header--<?php echo $header_theme;?>">
+	<header id="masthead" <?php header_classes();?>>
 		<div class="header__wrap container m-auto d-flex justify-content-between align-items-center px-0 px-md-3">
 			<a class="logo" href="<?php echo get_option('home');?>">
 				<img src="<?php echo bloginfo('template_url');?>/img/heavy-logo.png" />

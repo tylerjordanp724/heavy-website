@@ -31,7 +31,7 @@ get_header();
 				$post_title = get_the_title();
 			?>
 				<div class="hero hero--blog bg--gray-1 row-inside--lg d-flex align-items-center">
-					<div class="hero__content--blog container d-md-flex">
+					<div class="hero__content--blog container d-md-flex align-items-center">
 						<?php if(!empty($post_thumb)):?>
 							<div class="hero__img img--wide-cover col-md-6 px-0">
 								<figure>
@@ -43,10 +43,10 @@ get_header();
 						<?php endif;?>
 						<div class="hero__text col-md-6 px-md-5">
 							<span class="text-white">Recent News</span>
-							<div class="post-meta--recent text-white mt-5">
-								<span><?php echo $post_date?></span>
+							<div class="post-meta--recent text-white mt-3">
+								<span class="f--label"><?php echo $post_date?></span>
 								<h2 class="d-block mb-5"><?php echo $post_title;?></h2>
-								<a href="<?php echo get_permalink();?>"class="btn btn--white">read more</a>
+								<a href="<?php echo get_permalink();?>"class="btn btn--white">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -71,6 +71,11 @@ get_header();
 												<img src="<?php echo $post_thumb;?>"/>
 											</picture>
 										</figure>
+									</div>
+									<div class="post-teaser__text">
+										<span class="f--label d-block mb-3"><?php echo $post_date?></span>
+										<h4 class="d-block mb-3"><?php echo $post_title;?></h3>
+										<div class="btn btn--gray-1">Read More</div>
 									</div>
 								</div>
 							</div>

@@ -92,3 +92,37 @@
     line-height: #{$pixelSize}px;
     line-height: #{$pixelSize / 16}rem;
 }
+
+@mixin buttonColorStyle($baseColor, $altColor) {
+    border: 1px solid #{$baseColor};
+    color: #{$baseColor};
+    background-color: transparent;
+
+    .btn__arrow {
+        background-color: #{$baseColor};
+        
+        &:after {
+            border: 1px solid #{$baseColor};
+        }
+        
+    }
+
+    &:hover {
+        background-color: #{$baseColor};
+        color: #{$altColor};
+    }
+
+    &:hover .btn__text {
+        color: #{$altColor};
+    }
+
+    &:hover .btn__arrow {
+        background-color: $altColor;
+
+        &:after {
+            border-color: $altColor;
+        }
+    }
+
+    
+}

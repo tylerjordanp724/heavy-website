@@ -1,7 +1,21 @@
 header {
     width: 100%;
-    height: auto;
+    height: 83px;
     padding: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: transform 0.3s $cbTrans;
+    background-color: $white;
+
+    &.nav-up {
+        transform: translateY(-83px);
+    }
+
+    &.nav-down {
+        transform: translateY(0);
+    }
 }
 
 header .logo {

@@ -2,6 +2,10 @@
     font-weight: 300;
 }
 
+.f--label {
+    @include font-size(20);
+}
+
 p {
     font-weight: 300;
     @include font-size(18);

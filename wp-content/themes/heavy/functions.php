@@ -169,6 +169,24 @@ function bg_color() {
     }
 }
 
+function header_classes() {
+	$header_color;
+	$header_theme = get_field('header_theme');
+	$strings = array('header');
+	
+	if(is_front_page()) { 
+		$header_theme = get_field('header_theme');
+		$header_color = 'header--'.$header_theme.''; 
+		array_push($strings, $header_color);
+	}
+
+	if(is_home()) {
+		array_push($strings, 'header--blog');
+	}
+
+	echo 'class="'.implode(' ', $strings).'"';
+}
+
 // Register Custom Post Type
 function heavy_case_studies() {
 
