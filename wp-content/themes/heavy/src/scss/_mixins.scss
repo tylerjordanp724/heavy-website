@@ -126,3 +126,37 @@
 
     
 }
+
+@mixin buttonColorStyleSolid($baseColor, $altColor) {
+    border: 1px solid #{$baseColor};
+    color: #{$altColor};
+    background-color: #{$baseColor};
+
+    .btn__arrow {
+        background-color: #{$altColor};
+        
+        &:after {
+            border: 1px solid #{$altColor};
+        }
+        
+    }
+
+    &:hover {
+        background-color: #{$altColor};
+        color: #{$baseColor};
+    }
+
+    &:hover .btn__text {
+        color: #{$baseColor};
+    }
+
+    &:hover .btn__arrow {
+        background-color: $baseColor;
+
+        &:after {
+            border-color: $baseColor;
+        }
+    }
+
+    
+}

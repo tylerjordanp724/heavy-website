@@ -1,4 +1,4 @@
-header {
+header.header {
     width: 100%;
     height: 83px;
     padding: 25px;
@@ -16,54 +16,105 @@ header {
     &.nav-down {
         transform: translateY(0);
     }
-}
 
-header .logo {
-    width: 84px;
-    height: 27.22px;
-    display: block;
-    position: relative;
-
-    img {
+    .logo {
+        width: 84px;
+        height: 27.22px;
         display: block;
-        width: 100%;
-        height: auto;
-        -webkit-user-drag: none;
-        user-select: none;
-    }
-
-    @include breakFirst($screen-md) {
-        width: 92px;
-        height: 33px;
-    }
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    margin-bottom: 0;
+        position: relative;
     
-    li {
-        display: block;
-        margin: 0 16px;
-        @include font-size(20);
-
-        a:hover {
-            color: $black;
-            text-decoration: none;
+        svg {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            fill: $gray1;
         }
-
+    
         @include breakFirst($screen-md) {
-            margin: 0 47px;
-        }
-
-        &:first-child {
-            margin-left: 0;
-        }
-
-        &:last-child {
-            margin-right: 0;
+            width: 92px;
+            height: 33px;
         }
     }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        margin-bottom: 0;
+        
+        li {
+            display: block;
+            margin: 0 16px;
+            @include font-size(20);
+
+            a {
+                position: relative;
+                overflow: hidden;
+            }
+
+            a:before {
+                content: '';
+                display: block;
+                position: absolute; ;
+                width: 0;
+                height: 2px;
+                background-color: $gray1;
+                bottom: -5px;
+                right: 0;
+                transition: 0.3s width $cbTrans;
+            }
+    
+            a:hover {
+                color: $black;
+                text-decoration: none;
+            }
+
+            a:hover:before {
+                left: 0;
+                right: auto;
+                width: 100%;
+            }
+    
+            @include breakFirst($screen-md) {
+                margin: 0 47px;
+            }
+    
+            &:first-child {
+                margin-left: 0;
+            }
+    
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &--blog {
+        background-color: $gray1;
+
+        .logo svg {
+            fill: $white;
+        }
+        
+
+        nav ul li a {
+            color: $white;
+
+            &:before {
+                background-color: $white;
+                
+            }
+        }
+
+        nav ul li a:hover {
+            color: $white;
+        }
+    }
+
+
 }
+
+
+
+

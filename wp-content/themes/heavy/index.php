@@ -75,7 +75,7 @@ get_header();
 									<div class="post-teaser__text">
 										<span class="f--label d-block mb-3"><?php echo $post_date?></span>
 										<h4 class="d-block mb-3"><?php echo $post_title;?></h3>
-										<div class="btn btn--gray-1">Read More</div>
+										<div class="btn btn--gray-1-solid">Read More</div>
 									</div>
 								</div>
 							</div>

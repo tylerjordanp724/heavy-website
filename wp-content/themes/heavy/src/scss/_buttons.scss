@@ -17,6 +17,10 @@ a.btn, .btn {
 
     &--gray-1 {
         @include buttonColorStyle($gray1, $white);
+
+        &-solid {
+            @include buttonColorStyleSolid($gray1, $white);
+        }
     }
 
     .btn__text {
