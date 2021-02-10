@@ -26,7 +26,7 @@ get_header();
 			<?php while(get_current_loop_index() === 0): the_post();
 				$post_thumb = get_the_post_thumbnail();
 				$post_author = get_the_author();
-				$post_categories = get_the_category_list();
+				$post_categories = get_the_category();
 				$post_date = get_the_date();
 				$post_title = get_the_title();
 			?>
@@ -42,11 +42,11 @@ get_header();
 							</div>
 						<?php endif;?>
 						<div class="hero__text col-md-6 px-md-5">
-							<span class="text-white">Recent News</span>
+							<span class="text-white f--label-sm">Recent News</span>
 							<div class="post-meta--recent text-white mt-3">
-								<span class="f--label"><?php echo $post_date?></span>
+								<span class="f--label-md"><?php echo $post_date?>&nbsp;&nbsp;/&nbsp;&nbsp;<?php echo $post_categories[0]->cat_name;?></span>
 								<h2 class="d-block mb-5"><?php echo $post_title;?></h2>
-								<a href="<?php echo get_permalink();?>"class="btn btn--white">Read More</a>
+								<a href="<?php echo get_permalink();?>"class="btn btn--white btn--fit-content">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -59,7 +59,7 @@ get_header();
 						<?php while(have_posts()): the_post();
 							$post_thumb = get_the_post_thumbnail();
 							$post_author = get_the_author();
-							$post_categories = get_the_category_list();
+							$post_categories = get_the_category();
 							$post_date = get_the_date();
 							$post_title = get_the_title();
 						?>
@@ -73,9 +73,9 @@ get_header();
 										</figure>
 									</div>
 									<div class="post-teaser__text">
-										<span class="f--label d-block mb-3"><?php echo $post_date?></span>
+										<span class="f--label-sm d-block mb-3"><?php echo $post_date?>&nbsp;&nbsp;/&nbsp;&nbsp;<?php echo $post_categories[0]->cat_name;?></span>
 										<h4 class="d-block mb-3"><?php echo $post_title;?></h3>
-										<div class="btn btn--gray-1-solid">Read More</div>
+										<div class="btn btn--fit-content btn--gray-1-solid">Read More</div>
 									</div>
 								</div>
 							</div>

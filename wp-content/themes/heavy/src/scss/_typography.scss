@@ -3,7 +3,14 @@
 }
 
 .f--label {
-    @include font-size(20);
+
+    &-sm {
+        @include font-size(20);
+    }
+
+    &-md {
+        @include font-size(24);
+    }
 }
 
 p {

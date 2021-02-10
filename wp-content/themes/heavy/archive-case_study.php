@@ -21,6 +21,23 @@ get_header();
         <?php get_template_part('template-parts/blocks/block', 'featured-work-teaser');?>
     <?php elseif($content_block == 'contact_form'):?>
         <?php get_template_part('template-parts/blocks/block', 'contact-form');?>
+    <?php elseif($content_block == 'case_study_collection'):
+        $display = get_sub_field('display');
+    ?>
+        <?php if($display === 'sort_by_category'):?>
+                <?php get_template_part('template-parts/blocks/block', 'case-study-sort-list');?>
+            <?php elseif($display === 'list'):?>
+                <?php get_template_part('template-parts/blocks/block', 'case-study-list');?>
+            <?php elseif($display === 'grid'):?>
+                <?php get_template_part('template-parts/blocks/block', 'case-study-grid');?>
+        <?php endif;?>
+    <?php elseif($content_block === 'content_list'):
+        $content_type = get_sub_field('content_type');    
+    ?>
+        <?php if($content_type === 'logo_grid'):?>
+            <?php get_template_part('template-parts/blocks/block', 'content-list--logo-grid');?>    
+        <?php endif;?>
+
     <?php endif;?>
 <?php endwhile; endif;?>
 

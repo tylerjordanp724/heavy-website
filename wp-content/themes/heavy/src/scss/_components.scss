@@ -29,6 +29,60 @@ Case Studies
 
 
 /*
+Case Study Collection
+=====================
+*/
+
+.collection__list {
+    ul li {
+        border-top: 1px solid $black;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+            border-bottom: 1px solid $black;
+        }
+
+        
+
+        a {
+            @include font-size(20);
+            text-decoration: 0;
+            display: flex;
+            align-items: center;
+
+            span.arrow {
+                display: block;
+                width: 10px;
+                height: 1px;
+                background-color: $black;
+                margin-right: 5px;
+                transition: width 0.3s $cbTrans;
+            }
+    
+            span.arrow:after {
+                display: block;
+                content: '';
+                width: 5px;
+                height: 5px;
+                border: 1px solid $black;
+                position: relative;
+                transform: translate(5px, -2px) rotate(45deg);
+                border-left: 0;
+                border-bottom: 0;
+                transition: transform 0.3s $cbTrans;
+            }
+
+        }
+
+        a:hover {
+            color: $black;
+        }
+    }
+}
+
+
+/*
 Contact Form
 ==================
 */
@@ -158,6 +212,15 @@ Hero
     object-fit: cover;
 }
 
+
+.hero--blog {
+    height: auto;
+
+    .img--wide-cover figure picture {
+        padding-bottom: 75%;
+    }
+}
+
 /*
 Feature
 ==================
@@ -191,6 +254,79 @@ Feature
             visibility: hidden;
             opacity: 0;
         }
+    }
+}
+
+
+/*
+Grid Sort
+==================
+*/
+
+.grid-sort__wrapper {
+    left: 0;
+    .grid-sizer,
+    .grid-item {
+        width: 100%;
+
+        @include breakFirst($screen-md){ 
+            width: 20%;
+        }
+    }
+    .grid-item {
+        float: left;
+        transform: translateX(-15px);
+        margin-bottom: 30px;
+        
+        &--xl {
+            width: 100%;
+        }
+
+        &--lg-4 {
+            width: 100%;
+            
+
+            @include breakFirst($screen-md) {
+                width: 75%;
+                left: auto !important;
+                right: 0;
+            }
+        } 
+
+        &--md {
+            @include breakFirst($screen-md) {
+                width: 50%;
+
+                .img--wide-cover figure picture{
+                    padding-bottom: 56.25%;
+                }
+            }
+        }
+
+        &--md-6 {
+            @include breakFirst($screen-md) {
+                width: 50%;
+                left: auto !important;
+                right: 0;
+
+                .img--wide-cover figure picture{
+                    padding-bottom: 56.25%;
+                }
+            }
+        }
+
+        &--sm {
+            @include breakFirst($screen-md) {
+                width: 33%;
+                transform: translateY(45px);
+
+                .img--wide-cover figure picture{
+                    padding-bottom: 56.25%;
+                }
+            }
+        }
+
+
     }
 }
 

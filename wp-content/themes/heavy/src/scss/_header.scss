@@ -48,6 +48,12 @@ header.header {
             margin: 0 16px;
             @include font-size(20);
 
+            &.current-menu-item a:before {
+                left: 0;
+                right: auto;
+                width: 100%;
+            }
+
             a {
                 position: relative;
                 overflow: hidden;
@@ -75,7 +81,7 @@ header.header {
                 right: auto;
                 width: 100%;
             }
-    
+
             @include breakFirst($screen-md) {
                 margin: 0 47px;
             }

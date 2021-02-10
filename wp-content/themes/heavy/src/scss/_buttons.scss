@@ -23,6 +23,10 @@ a.btn, .btn {
         }
     }
 
+    &--fit-content {
+        width: fit-content;
+    }
+
     .btn__text {
         text-align: left;
         margin-right: 75px;

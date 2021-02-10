@@ -43,7 +43,36 @@ function case_study_caorusel() {
     });
 } 
 
+function gridSort() {
+    var $grid = $('.grid-sort__wrapper').isotope({
+        itemSelector: '.grid-item',
+        resize: true,
+        percentPosition: true,
+        masonry: {
+            columnWidth: '.grid-sizer'
+        }
+    });
+
+    $('.btn--filter:first').addClass('active');
+
+    if($('.btn--filter:first'))
+
+    $('.btn--filter').on('click', function(){
+        var filterValue = $(this).attr('data-filter');
+        $('.btn--filter').removeClass('active');
+        $(this).addClass('active');
+
+        $grid.isotope({
+            filter: filterValue
+        });
+    });
+    
+
+    
+}
+
 $(document).ready(function() {
     headerScroll();
     case_study_caorusel();
+    gridSort();
 });
