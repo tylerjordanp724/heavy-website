@@ -56,20 +56,36 @@ Content List
 .content-list {
     &__title {
         border-bottom: 1px solid $black;
+        margin-bottom: 15px;
     }
 
     &__logo-grid {
-        margin: 15px 0;
+        margin: 0;
+        border-bottom: 1px solid $black;
+        &:last-child {
+            border-bottom: 0;
+        }
+        
+        
     }
 
     &__logo-grid .logo-grid-item {
-        padding: 0;
-        margin: 0;
         border-bottom: 1px solid $black;
-        border-right: 1px solid $black;
+        &:nth-child(odd) {
+            border-right: 1px solid $black;
+        }
+        &:nth-last-child(-n+2) {
+            border-bottom: 0;
+        }
 
-        &:last-child {
-            border-right: 0;
+        @include breakFirst($screen-sm) {
+            border-right: 1px solid $black;
+            &:nth-child(-n+2) {
+                border-bottom: 0;
+            }
+            &:last-child {
+                border-right: 0;
+            }
         }
 
         figure {
@@ -93,6 +109,17 @@ Content List
             object-fit: contain;
 
         }   
+    }
+
+    &__text-list {
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul li {
+            @include font-size(20);
+        }
     }
 }
 

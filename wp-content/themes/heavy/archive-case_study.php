@@ -35,8 +35,12 @@ get_header();
         $content_type = get_sub_field('content_type');    
     ?>
         <?php if($content_type === 'logo_grid'):?>
-            <?php get_template_part('template-parts/blocks/block', 'content-list--logo-grid');?>    
+            <?php get_template_part('template-parts/blocks/block', 'content-list--logo-grid');?>
+        <?php elseif ($content_type === 'text_list'):?>
+            <?php get_template_part('template-parts/blocks/block', 'content-list--text-list');?>
         <?php endif;?>
+    <?php elseif($content_block === 'cta_banner'):?>
+        <?php get_template_part('template-parts/blocks/block', 'cta-banner');?>
 
     <?php endif;?>
 <?php endwhile; endif;?>

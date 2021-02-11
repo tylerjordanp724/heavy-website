@@ -8,7 +8,7 @@
 $title = get_sub_field('title');
 $logo_grid =  get_sub_field('logo_grid');
 ?>
-<div class="content-list content-list--logo-grid">
+<div class="content-list content-list--logo-grid row-inside--md">
     <div class="content-list__wrapper container">
         <?php if(!empty($title)):?>
             <div class="content-list__title">
@@ -17,10 +17,18 @@ $logo_grid =  get_sub_field('logo_grid');
         <?php endif;?>
         <?php if(!empty($logo_grid)):?>
             <div class="content-list__logo-grid row">
-                <?php foreach($logo_grid as $logo):
+                <?php 
+                $i = 0;
+                foreach($logo_grid as $logo):
+                    $i++;
                     $logo_url = $logo['url'];
+
+                    if($i > 4) {
+                        $i = 0;
+                        echo '</div><div class="content-list__logo-grid row">';
+                    }
                 ?>
-                    <div class="logo-grid-item col-6 col-md-3">
+                    <div class="logo-grid-item col-6 col-md-3 py-3">
                         <figure>
                             <picture>
                                 <img src="<?php echo $logo_url;?>"/>

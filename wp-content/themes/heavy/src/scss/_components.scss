@@ -81,6 +81,12 @@ Case Study Collection
     }
 }
 
+.collection__grid {
+    span {
+        @include font-size(20);
+    }
+}
+
 
 /*
 Contact Form
