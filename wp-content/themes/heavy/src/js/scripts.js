@@ -44,6 +44,8 @@ function case_study_caorusel() {
 } 
 
 function gridSort() {
+    // var $gridItem = $('.grid-item');
+    // var $gridItemIndex;
     var $grid = $('.grid-sort__wrapper').isotope({
         itemSelector: '.grid-item',
         resize: true,
@@ -53,11 +55,54 @@ function gridSort() {
         }
     });
 
+    // $gridItem.each(function(index){
+    //     var index = $(this).index();
+    //     var count = $(this).length;
+    //     var gridSize;
+    //     var gridSizeMod;
+
+
+    //     if(index === 1 || index === 10) {
+    //         gridSize = 'xl';
+    //         $(this).addClass('grid-item--'+gridSize+'');
+
+    //         if(index === 10) {
+    //             index = 1;
+    //         }
+    //     }
+
+    //     if(index === 2 || index === 6 || index === 8) {
+    //         gridSize = 'md';
+    //         $(this).addClass('grid-item--'+gridSize+'');
+
+    //         if(index === 2 || index === 8) {
+    //             gridSizeMod = '2';
+    //             $(this).addClass('grid-item--'+gridSize+'-'+gridSizeMod+'');
+    //         }
+
+    //         if(index === 6) {
+    //             gridSizeMod = '6';
+    //             $(this).addClass('grid-item--'+gridSize+'-'+gridSizeMod+'');
+    //         }
+    //     }
+
+    //     if(index === 3 || index === 5 || index === 9) {
+    //         gridSize = 'sm';
+    //         $(this).addClass('grid-item--'+gridSize+'');
+    //     }
+
+    //     if(index === 4 || index === 7) {
+    //         gridSize = 'lg';
+    //         $(this).addClass('grid-item--'+gridSize+'');
+    //     }
+    // });
+
+
     $('.btn--filter:first').addClass('active');
 
-    if($('.btn--filter:first'))
+    // console.log($('.grid-item').length);
 
-    $('.btn--filter').on('click', function(){
+    $('.btn--filter').on('click', function() {
         var filterValue = $(this).attr('data-filter');
         $('.btn--filter').removeClass('active');
         $(this).addClass('active');
@@ -66,6 +111,10 @@ function gridSort() {
             filter: filterValue
         });
     });
+
+    // $grid.on('arrangeComplete', function(filteredItems) {
+
+    // });
     
 
     

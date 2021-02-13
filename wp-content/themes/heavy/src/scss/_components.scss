@@ -82,8 +82,15 @@ Case Study Collection
 }
 
 .collection__grid {
+    
     span {
         @include font-size(20);
+    }
+
+    @include breakFirst($screen-md) {
+        .img--wide-cover figure picture {
+            padding-bottom: 75.25%;
+        }
     }
 }
 
@@ -270,7 +277,7 @@ Grid Sort
 */
 
 .grid-sort__wrapper {
-    left: 0;
+    width: calc(100% - 15px);
     .grid-sizer,
     .grid-item {
         width: 100%;
@@ -283,9 +290,32 @@ Grid Sort
         float: left;
         transform: translateX(-15px);
         margin-bottom: 30px;
+        transition: all 0.5s $cbTrans;
         
         &--xl {
             width: 100%;
+            left: 0;
+            right: 0;
+
+            .img--wide-cover figure picture{
+                padding-bottom: 42%;
+            }
+
+            @include breakFirst($screen-md) {
+                width: calc(100% - 15px);
+            }
+
+
+        }
+
+        &--lg {
+            width: 100%;
+
+            .img--wide-cover figure picture{
+                padding-bottom: 48%;
+            }
+
+
         }
 
         &--lg-4 {
@@ -297,14 +327,23 @@ Grid Sort
                 left: auto !important;
                 right: 0;
             }
-        } 
+        }
+        
+        &--lg-7 {
+            width: 100%;
+            
 
-        &--md {
+            @include breakFirst($screen-md) {
+                width: 75%;
+            }
+        }
+
+        &--md-2 {
             @include breakFirst($screen-md) {
                 width: 50%;
 
                 .img--wide-cover figure picture{
-                    padding-bottom: 56.25%;
+                    padding-bottom: 75.25%;
                 }
             }
         }
@@ -316,7 +355,7 @@ Grid Sort
                 right: 0;
 
                 .img--wide-cover figure picture{
-                    padding-bottom: 56.25%;
+                    padding-bottom: 75.25%;
                 }
             }
         }
@@ -327,7 +366,7 @@ Grid Sort
                 transform: translateY(45px);
 
                 .img--wide-cover figure picture{
-                    padding-bottom: 56.25%;
+                    padding-bottom: 75.25%;
                 }
             }
         }

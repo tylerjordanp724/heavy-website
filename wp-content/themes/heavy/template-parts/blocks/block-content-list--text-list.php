@@ -18,11 +18,11 @@ $layout = get_sub_field('layout');
         <?php endif;?>
         <?php if(have_rows('text_list')):?>
             <div class="content-list__text-list">
-                <ul class="<?php if($layout === 'column') {echo 'd-lg-flex justify-content-between';}?>">
+                <ul class="p-0 <?php if($layout === 'column') {echo 'no-gutters d-lg-flex justify-content-between flex-wrap';}?>">
                     <?php while(have_rows('text_list')): the_row();
                         $text = get_sub_field('title');
                     ?>
-                        <li><?php echo $text;?></li>
+                        <li class="mr-3 mb-3"><?php echo $text;?></li>
                     <?php endwhile;?>
                 </ul>
             </div>    

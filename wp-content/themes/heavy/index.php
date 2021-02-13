@@ -55,16 +55,16 @@ get_header();
 			<?php if(have_posts()):?>
 				<div class="posts-row row-inside--lg">
 					<div class="posts-row__content container">
-						<h3>Stories<h3/>
-						<?php while(have_posts()): the_post();
-							$post_thumb = get_the_post_thumbnail();
-							$post_author = get_the_author();
-							$post_categories = get_the_category();
-							$post_date = get_the_date();
-							$post_title = get_the_title();
-						?>
-							<div class="posts__wrapper d-md-flex row-inside--md px-0">
-								<div class="post-teaser col-md-6 pl-0">
+						<h3>Stories</h3>
+						<div class="posts__wrapper d-md-flex justify-content-md-between row px-0 pt-4">
+							<?php while(have_posts()): the_post();
+								$post_thumb = get_the_post_thumbnail();
+								$post_author = get_the_author();
+								$post_categories = get_the_category();
+								$post_date = get_the_date();
+								$post_title = get_the_title();
+							?>
+								<div class="post-teaser col-md-6 mb-5">
 									<div class="post-teaser__img img--wide-cover">
 										<figure>
 											<picture>
@@ -75,11 +75,11 @@ get_header();
 									<div class="post-teaser__text">
 										<span class="f--label-sm d-block mb-3"><?php echo $post_date?>&nbsp;&nbsp;/&nbsp;&nbsp;<?php echo $post_categories[0]->cat_name;?></span>
 										<h4 class="d-block mb-3"><?php echo $post_title;?></h3>
-										<div class="btn btn--fit-content btn--gray-1-solid">Read More</div>
+										<a href="<?php echo get_permalink();?>" class="btn btn--fit-content btn--gray-1-solid">Read More</a>
 									</div>
 								</div>
-							</div>
-						<?php endwhile;?>
+							<?php endwhile; wp_reset_postdata();?>
+						</div>
 					<div>
 				</div>
 			<?php endif;?>

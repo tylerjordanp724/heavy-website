@@ -35,6 +35,7 @@ $case_studies = new WP_Query($args);
                 $slug = '';
                 $count++;
                 $grid_size = '';
+                $grid_size_mod = '';
 
                 if(!empty($post_categories)) {
                     foreach($post_categories as $cat) {
@@ -42,30 +43,45 @@ $case_studies = new WP_Query($args);
                     }
                 }
 
-                if($count === 1 || $count === 7) {
-                    $grid_size .= 'xl';
+                if($count === 1 || $count === 10) {
+                    $grid_size = 'xl';
+
+                    if($count === 10) {
+                        $count = 1;
+                    }
                 }
 
-                if($count % 2 === 0) {
+                if($count === 2 || $count === 6 || $count === 8) {
                     $grid_size = 'md';
-                } elseif($count % 3 === 0 || $count === 5) {
-                    $grid_size .= 'sm';
+
+                    if($count === 2 || $count === 8) {
+                        $grid_size_mod = '2';
+                    }
+
+                    if($count === 6) {
+                        $grid_size_mod = '6';
+                    }
                 }
                 
-                if($count === 4) {
-                    $grid_size = 'lg-4';
+                if($count === 3 || $count === 5 || $count === 9) {
+                    $grid_size = 'sm';
+                }
+                
+                if($count === 4 || $count === 7) {
+                    $grid_size = 'lg';
+
+                    if($count === 4) {
+                        $grid_size_mod = '4';
+                    }
+
+                    if($count === 7) {
+                        $grid_size_mod = '7';
+                    }
                 }
 
-                if($count === 8) {
-                    $grid_size = 'lg-8';
-                }
 
-                if($count === 6) {
-                    $grid_size = 'md-6';
-                    $count = 1;
-                }
             ?>
-                <div class="grid-item grid-item--<?php echo $grid_size;?> <?php echo $slug;?>">
+                <div class="grid-item grid-item--<?php echo $grid_size;?> <?php if(!empty($grid_size_mod)) {echo 'grid-item--'.$grid_size.'-'.$grid_size_mod.'';}?> <?php echo $slug;?>">
                     <?php if(!empty($post_thumb)):?>
                         <div class="grid-item__img img--wide-cover">
                             <figure>

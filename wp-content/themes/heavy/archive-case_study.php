@@ -41,7 +41,6 @@ get_header();
         <?php endif;?>
     <?php elseif($content_block === 'cta_banner'):?>
         <?php get_template_part('template-parts/blocks/block', 'cta-banner');?>
-
     <?php endif;?>
 <?php endwhile; endif;?>
 

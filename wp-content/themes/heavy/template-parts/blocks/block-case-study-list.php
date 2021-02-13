@@ -20,8 +20,8 @@ $case_study = get_sub_field('case_studies_list');
                     $post_title = get_the_title($post->ID);
                     $post_link = get_the_permalink($post->ID);
                 ?>
-                <li class="d-block py-4">
-                   <a href="<?php echo $post_link;?>"><span class="arrow"></span><?php echo $post_title;?></a>
+                <li class="d-block">
+                   <a class="py-4" href="<?php echo $post_link;?>"><span class="arrow"></span><?php echo $post_title;?></a>
                 </li>
                 <?php endforeach; wp_reset_postdata();?>
             </ul>
