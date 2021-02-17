@@ -40,5 +40,9 @@
         <?php endif;?>
     <?php elseif($content_block === 'cta_banner'):?>
         <?php get_template_part('template-parts/blocks/block', 'cta-banner');?>
+    <?php elseif($content_block === 'text_intro'):?>
+        <?php get_template_part('template-parts/blocks/block', 'text-intro');?>
+    
+    
     <?php endif;?>
 <?php endwhile; endif;?>
