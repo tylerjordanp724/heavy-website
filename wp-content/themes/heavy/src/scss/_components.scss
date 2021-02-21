@@ -1,5 +1,59 @@
 /* Components */
 
+.careers {
+    .career__title-list ul {
+        list-style-type: none;
+    }
+
+    .career__title-list ul li {
+        cursor: pointer;
+
+        &.active {
+            font-weight: 700;
+        }
+    }
+
+    .career__desc {
+        position: relative;
+       
+
+    }
+
+    .career__desc-container {
+        // padding-left: 0;
+        // padding-right: 0;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        height: auto;
+        // transform: translateY(0px);
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            
+        }
+       
+        ul {
+            padding-left: 15px;
+        }
+    } 
+}
+
+.carousel--content {
+    height: auto;
+
+    .carousel__slide {
+        width: 100%;
+    }
+
+    .carousel__slide .carousel__img figure picture {
+        padding-bottom: 45vw;
+    }
+}
+
 /*
 Case Studies
 ==================

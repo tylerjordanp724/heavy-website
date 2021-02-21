@@ -37,15 +37,60 @@ function headerScroll() {
     }
 }
 
+function careers() {
+    var $careerItem = $('.career__title-list ul li');
+        $firstNavItem = $('.career__title-list ul li:first');
+        $firstItem =  $('.career__desc-container:first');
+        maxHeight = 0;
+    
+    $firstNavItem.addClass('active');
+
+    if($firstNavItem.hasClass('active')) {
+        maxHeight +=  $firstItem.outerHeight();
+    
+        $firstItem.addClass('active');
+
+        $('.career__desc').css({'height': maxHeight});
+        //maxHeight += 
+    }
+
+    $(window).resize(function(){
+        var itemHeight = $('.career__desc-container.active').outerHeight();
+        $('.career__desc').css({'height': itemHeight});
+
+    });
+    
+    
+
+    $careerItem.click(function(){
+        var $currItem = $('#' + $(this).attr('data-title'));
+            $currItemHeight = $currItem.outerHeight();
+            $itemParent = $('.career__desc');
+
+        maxHeight =  $currItem.outerHeight();
+
+        $('.career__title-list ul li').removeClass('active');
+        $('.career__desc-container').removeClass('active');
+        $currItem.addClass('active');
+        $(this).addClass('active');
+        $('.career__desc').css({'height': maxHeight});
+        // $itemParent.css({'height': ''+$currItemHeight+'px'});
+    });
+}
+
 function case_study_caorusel() {
     $('.carousel .carousel__container').flickity({
         cellAlign: 'right'
     });
 } 
 
+function content_carousel() {
+    $('.carousel--content').flickity({
+        cellAlign: 'center'
+    });
+}
+
 function gridSort() {
-    // var $gridItem = $('.grid-item');
-    // var $gridItemIndex;
     var $grid = $('.grid-sort__wrapper').isotope({
         itemSelector: '.grid-item',
         resize: true,
@@ -55,52 +100,7 @@ function gridSort() {
         }
     });
 
-    // $gridItem.each(function(index){
-    //     var index = $(this).index();
-    //     var count = $(this).length;
-    //     var gridSize;
-    //     var gridSizeMod;
-
-
-    //     if(index === 1 || index === 10) {
-    //         gridSize = 'xl';
-    //         $(this).addClass('grid-item--'+gridSize+'');
-
-    //         if(index === 10) {
-    //             index = 1;
-    //         }
-    //     }
-
-    //     if(index === 2 || index === 6 || index === 8) {
-    //         gridSize = 'md';
-    //         $(this).addClass('grid-item--'+gridSize+'');
-
-    //         if(index === 2 || index === 8) {
-    //             gridSizeMod = '2';
-    //             $(this).addClass('grid-item--'+gridSize+'-'+gridSizeMod+'');
-    //         }
-
-    //         if(index === 6) {
-    //             gridSizeMod = '6';
-    //             $(this).addClass('grid-item--'+gridSize+'-'+gridSizeMod+'');
-    //         }
-    //     }
-
-    //     if(index === 3 || index === 5 || index === 9) {
-    //         gridSize = 'sm';
-    //         $(this).addClass('grid-item--'+gridSize+'');
-    //     }
-
-    //     if(index === 4 || index === 7) {
-    //         gridSize = 'lg';
-    //         $(this).addClass('grid-item--'+gridSize+'');
-    //     }
-    // });
-
-
     $('.btn--filter:first').addClass('active');
-
-    // console.log($('.grid-item').length);
 
     $('.btn--filter').on('click', function() {
         var filterValue = $(this).attr('data-filter');
@@ -110,18 +110,14 @@ function gridSort() {
         $grid.isotope({
             filter: filterValue
         });
-    });
+    });   
 
-    // $grid.on('arrangeComplete', function(filteredItems) {
-
-    // });
-    
-
-    
 }
 
 $(document).ready(function() {
     headerScroll();
+    careers();
     case_study_caorusel();
+    content_carousel();
     gridSort();
 });

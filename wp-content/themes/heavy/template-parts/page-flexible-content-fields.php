@@ -42,6 +42,12 @@
         <?php get_template_part('template-parts/blocks/block', 'cta-banner');?>
     <?php elseif($content_block === 'text_intro'):?>
         <?php get_template_part('template-parts/blocks/block', 'text-intro');?>
+    <?php elseif($content_block === 'image_carousel'):?>
+        <?php get_template_part('template-parts/blocks/block', 'carousel');?>
+    <?php elseif($content_block === 'content_carousel'):?>
+        <?php get_template_part('template-parts/blocks/block', 'carousel--content');?>
+    <?php elseif($content_block === 'careers'):?>
+        <?php get_template_part('template-parts/blocks/block', 'careers');?>
     
     
     <?php endif;?>
