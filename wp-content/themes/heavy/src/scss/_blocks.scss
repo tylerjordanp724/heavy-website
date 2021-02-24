@@ -270,6 +270,7 @@ Hero
             object-fit: cover;
         }
     }
+    
 
     &--case-study-img {
         position: relative;
@@ -296,6 +297,31 @@ Hero
             display: block;
             position: relative;
             width: 100%;
+            height: auto;
+            object-fit: contain;
+    
+        }
+    }
+
+    &--w-image {
+        height: 80vh;
+
+        figure {
+            margin-bottom: 0;
+        }
+
+        figure picture {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+    
+        figure picture img {
+            display: block;
+            position: relative;
+            width: 80%;
             height: auto;
             object-fit: contain;
     

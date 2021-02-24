@@ -51,7 +51,6 @@ function careers() {
         $firstItem.addClass('active');
 
         $('.career__desc').css({'height': maxHeight});
-        //maxHeight += 
     }
 
     $(window).resize(function(){
@@ -59,7 +58,6 @@ function careers() {
         $('.career__desc').css({'height': itemHeight});
 
     });
-    
     
 
     $careerItem.click(function(){
@@ -74,7 +72,6 @@ function careers() {
         $currItem.addClass('active');
         $(this).addClass('active');
         $('.career__desc').css({'height': maxHeight});
-        // $itemParent.css({'height': ''+$currItemHeight+'px'});
     });
 }
 

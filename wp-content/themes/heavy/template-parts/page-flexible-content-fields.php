@@ -10,6 +10,8 @@
 ?>
     <?php if($content_block == 'text_hero'):?>
         <?php get_template_part('template-parts/blocks/block', 'text-hero');?>
+    <?php elseif($content_block == 'hero_w_image'):?>
+        <?php get_template_part('template-parts/blocks/block', 'hero--w-image');?>
     <?php elseif($content_block == 'feature_w_video'):?>
         <?php get_template_part('template-parts/blocks/block', 'feature--w-video');?>
     <?php elseif($content_block == 'feature_basic'):?>
@@ -48,6 +50,10 @@
         <?php get_template_part('template-parts/blocks/block', 'carousel--content');?>
     <?php elseif($content_block === 'careers'):?>
         <?php get_template_part('template-parts/blocks/block', 'careers');?>
+    <?php elseif($content_block === 'text_banner'):?>
+        <?php get_template_part('template-parts/blocks/block', 'text-banner');?>
+    <?php elseif($content_block === 'stats'):?>
+        <?php get_template_part('template-parts/blocks/block', 'stats');?>
     
     
     <?php endif;?>

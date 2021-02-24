@@ -98,18 +98,19 @@ header.header {
 
     &--blog {
         background-color: $gray1;
+    }
 
+    &--blog, &--transparent {
+        
         .logo svg {
             fill: $white;
         }
         
-
         nav ul li a {
             color: $white;
 
             &:before {
                 background-color: $white;
-                
             }
         }
 
@@ -118,7 +119,15 @@ header.header {
         }
     }
 
-
+    &--transparent {
+        background-color: transparent;
+        color: $white;
+        position: absolute;
+        
+        & + .hero--w-image {
+            margin-top: -83px;
+        }
+    }
 }
 
 

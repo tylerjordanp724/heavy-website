@@ -174,7 +174,7 @@ function header_classes() {
 	$header_theme = get_field('header_theme');
 	$strings = array('header');
 	
-	if(is_front_page()) { 
+	if(is_front_page() || is_page()) { 
 		$header_theme = get_field('header_theme');
 		$header_color = 'header--'.$header_theme.''; 
 		array_push($strings, $header_color);
