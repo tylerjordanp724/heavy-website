@@ -111,10 +111,30 @@ function gridSort() {
 
 }
 
+function gtHover() {
+    $('.left-col').hover(function (e) {
+        //e.preventDefault();
+        $(this).toggleClass("col-md-7");
+        $(this).next().toggleClass("push-r");
+        // $(this).next().toggleClass("mr-auto");
+        //$(this).children('.cs_content').toggle("fade",500);
+    });
+    
+    $('.right-col').hover(function (e) {
+        //e.preventDefault();
+        $(this).toggleClass("col-md-7");
+        $(this).prev().toggleClass("push-l");
+        // $(this).next().toggleClass("ml-auto");
+        //$(this).children('.cs_content').toggle("fade",500);
+    });
+    
+}
+
 $(document).ready(function() {
     headerScroll();
     careers();
     case_study_caorusel();
     content_carousel();
     gridSort();
+    //gtHover();
 });
