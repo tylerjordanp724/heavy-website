@@ -111,10 +111,23 @@ function gridSort() {
 
 }
 
+function gtHover() {
+    $(".left-col").hover(function () {
+        $(this).toggleClass("active");
+        $(this).next().toggleClass("push-r");
+    });
+    
+    $(".right-col").hover(function () {
+        $(this).toggleClass("active");
+        $(this).prev().toggleClass("push-l");
+    });
+}
+
 $(document).ready(function() {
     headerScroll();
     careers();
     case_study_caorusel();
     content_carousel();
     gridSort();
+    gtHover();
 });

@@ -145,6 +145,80 @@ Case Study Collection
     }
 }
 
+.collection--list-pro-bono {
+    .collection__item {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow-x: hidden;
+        transition: width 0.3s $cbTrans;
+        z-index: 0;
+
+        .collection__item-meta {
+            color: $white;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            padding: 30px;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s $cbTrans, visibility 0.3s $cbTrans;
+            @include background-opacity($black, 0.8);
+            @include font-size(18);
+        }
+
+        .collection__item-meta:after {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 2px;
+            background-color: $white;
+            position: relative;
+        }
+
+
+
+        @include breakFirst($screen-sm) {
+            width: 50%;
+
+            .collection__item-meta {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &.right-col {
+                right: 0;
+            }
+
+            &.left-col {
+                left: 0;
+            }
+
+            &.active {
+                width: 75%;
+
+                .collection__item-meta {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            &.push-r {
+                width: 25%;
+                margin-right: -25%;
+            }
+
+            &.push-l {
+                width: 25%;
+                //margin-left: -25%;
+            }
+        }
+    }
+}
+
 
 /*
 Contact Form
