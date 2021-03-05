@@ -151,7 +151,7 @@ Case Study Collection
         width: 100%;
         height: 300px;
         overflow-x: hidden;
-        transition: width 0.3s $cbTrans;
+        transition: width 0.5s $cbTrans, margin 0.5s $cbTrans;
         z-index: 0;
 
         .collection__item-meta {
@@ -165,9 +165,32 @@ Case Study Collection
             padding: 30px;
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.3s $cbTrans, visibility 0.3s $cbTrans;
-            @include background-opacity($black, 0.8);
+            transition: opacity 0.5s $cbTrans, visibility 0.5s $cbTrans;
+            @include background-opacity($black, 0.4);
             @include font-size(18);
+
+            span {
+                display: block;
+                position: relative;
+                z-index: 2;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                backdrop-filter: blur(6px);
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.5s $cbTrans, visibility 0.5s $cbTrans;
+
+            }
         }
 
         .collection__item-meta:after {
@@ -177,6 +200,7 @@ Case Study Collection
             height: 2px;
             background-color: $white;
             position: relative;
+            z-index: 1;
         }
 
 
@@ -200,7 +224,8 @@ Case Study Collection
             &.active {
                 width: 75%;
 
-                .collection__item-meta {
+                .collection__item-meta,
+                .collection__item-meta:before {
                     opacity: 1;
                     visibility: visible;
                 }
@@ -213,7 +238,6 @@ Case Study Collection
 
             &.push-l {
                 width: 25%;
-                //margin-left: -25%;
             }
         }
     }
