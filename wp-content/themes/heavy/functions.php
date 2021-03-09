@@ -141,7 +141,7 @@ add_action( 'widgets_init', 'heavy_widgets_init' );
  */
 function heavy_assets() {
 	// styles
-	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com//bootstrap/4.1.3/css/bootstrap.min.css', array(), '4.1.3','all');
+	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), '4.1.3','all');
 
 	wp_enqueue_style( 'styles', get_template_directory_uri().'/css/styles.css',array(), '1.0.0','all' );
 
