@@ -1,4 +1,4 @@
-function headerScroll() {
+function header_scroll() {
     var didScroll;
     var lastScrollTop = 0;
     var delta = 5;
@@ -38,40 +38,40 @@ function headerScroll() {
 }
 
 function careers() {
-    var $careerItem = $('.career__title-list ul li');
-        $firstNavItem = $('.career__title-list ul li:first');
-        $firstItem =  $('.career__desc-container:first');
-        maxHeight = 0;
+    var $career_item = $('.career__title-list ul li');
+        $first_nav_item = $('.career__title-list ul li:first');
+        $first_item =  $('.career__desc-container:first');
+        max_height = 0;
     
-    $firstNavItem.addClass('active');
+    $first_nav_item.addClass('active');
 
-    if($firstNavItem.hasClass('active')) {
-        maxHeight +=  $firstItem.outerHeight();
+    if($first_nav_item.hasClass('active')) {
+        max_height +=  $first_item.outerHeight();
     
-        $firstItem.addClass('active');
+        $first_item.addClass('active');
 
-        $('.career__desc').css({'height': maxHeight});
+        $('.career__desc').css({'height': max_height});
     }
 
     $(window).resize(function(){
-        var itemHeight = $('.career__desc-container.active').outerHeight();
-        $('.career__desc').css({'height': itemHeight});
+        var item_height = $('.career__desc-container.active').outerHeight();
+        $('.career__desc').css({'height': item_height});
 
     });
     
 
-    $careerItem.click(function(){
-        var $currItem = $('#' + $(this).attr('data-title'));
-            $currItemHeight = $currItem.outerHeight();
-            $itemParent = $('.career__desc');
+    $career_item.click(function(){
+        var $curr_item = $('#' + $(this).attr('data-title'));
+            $curr_item_height = $curr_item.outerHeight();
+            $item_parent = $('.career__desc');
 
-        maxHeight =  $currItem.outerHeight();
+        max_height =  $curr_item.outerHeight();
 
         $('.career__title-list ul li').removeClass('active');
         $('.career__desc-container').removeClass('active');
-        $currItem.addClass('active');
+        $curr_item.addClass('active');
         $(this).addClass('active');
-        $('.career__desc').css({'height': maxHeight});
+        $('.career__desc').css({'height': max_height});
     });
 }
 
@@ -82,12 +82,12 @@ function case_study_caorusel() {
 } 
 
 function content_carousel() {
-    $('.carousel--content').flickity({
+    $('.carousel--content, .post-block-carousel__inner').flickity({
         cellAlign: 'center'
     });
 }
 
-function gridSort() {
+function grid_sort() {
     var $grid = $('.grid-sort__wrapper').isotope({
         itemSelector: '.grid-item',
         resize: true,
@@ -111,30 +111,38 @@ function gridSort() {
 
 }
 
-function gtHover() {
-    $('.left-col').hover(function (e) {
-        //e.preventDefault();
-        $(this).toggleClass("col-md-7");
+function gt_hover() {
+    $(".left-col").hover(function () {
+        $(this).toggleClass("active");
         $(this).next().toggleClass("push-r");
-        // $(this).next().toggleClass("mr-auto");
-        //$(this).children('.cs_content').toggle("fade",500);
     });
     
-    $('.right-col').hover(function (e) {
-        //e.preventDefault();
-        $(this).toggleClass("col-md-7");
+    $(".right-col").hover(function () {
+        $(this).toggleClass("active");
         $(this).prev().toggleClass("push-l");
-        // $(this).next().toggleClass("ml-auto");
-        //$(this).children('.cs_content').toggle("fade",500);
     });
-    
+}
+
+function contact_modal() {
+    var $modal_trigger = $('.btn--modal');
+        $modal_close = $('.btn--close');
+
+    $modal_trigger.click(function(e){
+        e.preventDefault();
+
+        $('body').find('.modal').addClass('open');
+    });
+
+    $modal_close.click(function(){
+        $('.modal').removeClass('open');
+    });
 }
 
 $(document).ready(function() {
-    headerScroll();
+    header_scroll();
     careers();
     case_study_caorusel();
     content_carousel();
-    gridSort();
-    //gtHover();
+    grid_sort();
+    gt_hover();
 });

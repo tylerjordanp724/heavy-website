@@ -10,7 +10,17 @@
  */
 
 ?>
-
+	<div class="modal">
+		<div class="modal__close">
+			<div class="btn--close">
+				<div class="close__slice"></div>
+				<div class="close__slice"></div>
+			</div>
+		</div>
+		<div class="modal__container">
+			<!-- contact form shortcode goes here -->
+		</div>
+	</div>
 	<footer class="footer">
 		<div class="footer__container container m-auto no-gutters d-md-flex py-4">
 			<div class="footer__col d-md-none">
@@ -41,7 +51,7 @@
 					</ul>
 				</div>
 				<div class="footer__col d-none d-md-block">
-					<a class="btn">
+					<a class="btn btn--contact">
 						<span class="btn__text">Contact Us</span><span class="btn__arrow"></span>
 					</a>
 				</div>
