@@ -2,7 +2,8 @@
 Carousel
 ==================
 */
-.carousel--case-study .carousel__container {
+.carousel--case-study .carousel__container,
+.post-block-carousel .carousel__container {
     height: 300px;
 
     @include breakFirst($screen-sm) {
@@ -33,6 +34,10 @@ Carousel
     .carousel__image figure {
         margin-bottom: 0;
     }
+}
+
+.post-block-carousel .carousel__container .carousel__image {
+    width: 100%;
 }
 
 .carousel--case-study-video {
@@ -328,6 +333,28 @@ Hero
         }
     }
 }
+
+/*
+Post Video
+==================
+*/
+
+.post-block-video {
+    .video__container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
 
 
 

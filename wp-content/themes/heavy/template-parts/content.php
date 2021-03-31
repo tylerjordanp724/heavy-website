@@ -28,6 +28,18 @@ $featured_image = get_the_post_thumbnail();
 		</div><!-- .entry-header -->
 		<div class="post__content row-outside--xl">
 			<?php the_content();?>
+			<?php if(have_rows('post_content_fields')):while(have_rows('post_content_fields')): the_row();
+				$post_content_block = get_row_layout();
+			?>
+				<?php if($post_content_block === 'post_block'):?>
+					<?php get_template_part('template-parts/blocks/block','post-block');?>
+				<?php elseif($post_content_block === 'image_carousel'):?>
+					<?php get_template_part('template-parts/blocks/block', 'post-carousel');?>
+				<?php elseif($post_content_block === 'video'):?>
+					<?php get_template_part('template-parts/blocks/block', 'post-video');?>
+				<?php endif;?>
+
+			<?php endwhile; endif;?>
 		</div>
 	</div>
 	<!-- .entry-content -->

@@ -82,7 +82,7 @@ function case_study_caorusel() {
 } 
 
 function content_carousel() {
-    $('.carousel--content').flickity({
+    $('.carousel--content, .post-block-carousel__inner').flickity({
         cellAlign: 'center'
     });
 }
