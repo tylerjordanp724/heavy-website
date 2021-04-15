@@ -7,7 +7,7 @@
     $hero_text = get_sub_field('text');
 ?>
 
-<div class="hero hero--<?php echo $hero_bg_color;?> row-inside--lg">
+<div class="hero hero--<?php echo $hero_bg_color;?> d-flex align-items-center row-inside--lg">
     <div class="hero__wrapper row-inside--lg container d-md-flex align-items-end">
         <div class="hero__col--text col-md-8 mb-4 px-0">
             <?php if(!empty($hero_text)):?>

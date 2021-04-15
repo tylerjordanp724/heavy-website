@@ -226,7 +226,7 @@ Hero
     height: auto;
 
     @include breakFirst($screen-md) {
-        height: 75vh;
+        height: 50vw;
     }
 
 
