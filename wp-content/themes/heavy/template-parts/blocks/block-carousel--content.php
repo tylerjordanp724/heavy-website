@@ -24,7 +24,7 @@ $bg_color = get_sub_field('background_color');
                     </figure>
                 </div>
             <?php endif;?>
-            <div class="carousel__text col-md-5 offset-md-1 text-white">
+            <div class="carousel__text col-md-5 text-white">
                 <?php if(!empty($title)):?>
                     <h2><?php echo $title;?></h2>    
                 <?php endif;?>

@@ -9,7 +9,7 @@ $link = get_sub_field('link');
 $desc = get_sub_field('description');
 $featured_work = get_sub_field('featured_work');
 ?>
-<div class="teaser-row teaser--featured-work bg--gray-1 row-inside--lg">
+<div class="teaser-row teaser--featured-work bg--gray-1 row-inside--xl">
     <div class="teaser-row__container container">
         <div class="teaser-header row-outside--md d-md-flex justify-content-between">
             <?php if(!empty($title)):?>

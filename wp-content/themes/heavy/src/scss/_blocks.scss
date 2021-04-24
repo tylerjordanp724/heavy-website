@@ -145,15 +145,19 @@ Features
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 56.25%;
+            padding-bottom: 55vw;
             overflow: hidden;
             transform: scale(1);
             transform-origin: 50% 0;
         }
 
         @include breakFirst($screen-md) {
-            height: calc(80vh + 60px);
+            height: 60vw;
             overflow: hidden;
+
+            .feature__video {
+                top: 5vw;
+            }
 
             &:hover .feature__overlay {
                 opacity: 1;
@@ -225,10 +229,6 @@ Hero
     position: relative;
     height: auto;
 
-    @include breakFirst($screen-md) {
-        height: 50vw;
-    }
-
 
     .hero__wrapper {
         position: relative;
@@ -236,6 +236,10 @@ Hero
 
         @include breakFirst($screen-md) {
             top: 10%;
+
+            .hero__col--text h1 {
+                @include font-size(84);
+            }
         }
     }
 

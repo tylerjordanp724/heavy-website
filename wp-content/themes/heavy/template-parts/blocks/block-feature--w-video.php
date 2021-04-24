@@ -9,9 +9,11 @@ $feature_text = get_sub_field('text');
 $feature_link = get_sub_field('link');
 ?>
 
-<div class="feature feature--w-video">
+<div class="feature feature--w-video row-inside--lg
+
+">
     <div class="feature__video">
-        <video autoplay mute loop>
+        <video class="feature-video-item" autoplay mute loop>
             <source src="<?php echo $feature_video;?>">
         </video>
     </div>

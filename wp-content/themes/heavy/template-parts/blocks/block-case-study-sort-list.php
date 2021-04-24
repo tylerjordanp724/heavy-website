@@ -4,13 +4,11 @@
  * 
  * 
  */
-$args = array('post_type' => 'case_study', 'posts_per_page' => -1);
-$case_studies = new WP_Query($args);    
+$case_study = get_sub_field('case_studies_list');
+$count = 0;    
 ?>
 
-<?php if($case_studies -> have_posts()):
-    $count = 0;
-?> 
+ 
     <div class="grid-sort-nav">
         <div class="grid-sort-nav__wrapper container">
             <div class="grid-sort-nav__list p-0">
@@ -28,10 +26,10 @@ $case_studies = new WP_Query($args);
     <div class="grid grid-sort__row row-inside--lg">
         <div class="grid-sort__wrapper container">
             <div class="grid-sizer"></div>
-            <?php while($case_studies -> have_posts()): $case_studies -> the_post();
-                $post_title = get_the_title();
-                $post_thumb = get_the_post_thumbnail();
-                $post_categories = get_the_category();
+            <?php foreach($case_study as $post): setup_postdata($post);
+                $post_title = get_the_title($post->ID);
+                $post_thumb = get_the_post_thumbnail($post->ID);
+                $post_categories = get_the_category($post->ID);
                 $slug = '';
                 $count++;
                 $grid_size = '';
@@ -96,7 +94,6 @@ $case_studies = new WP_Query($args);
                     <?php endif;?>
                     <a href="<?php echo get_permalink();?>" class="link-whole-area"></a>
                 </div>
-            <?php endwhile; wp_reset_postdata();?> 
+            <?php endforeach; wp_reset_postdata();?> 
         </div>
     </div> 
-<?php endif;?>

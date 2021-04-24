@@ -138,11 +138,17 @@ function contact_modal() {
     });
 }
 
+// function feature_video() {
+//     $('.feature-video-item')[0].play();
+// }
+
 $(document).ready(function() {
     header_scroll();
     careers();
     case_study_caorusel();
     content_carousel();
+    //feature_video();
     grid_sort();
     gt_hover();
+    $('.feature-video-item')[0].play();
 });

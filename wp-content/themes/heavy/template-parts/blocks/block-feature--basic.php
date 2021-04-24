@@ -57,16 +57,19 @@ $image = get_sub_field('image');
         <?php endif;?>
         <?php if(!empty($text) || !empty($headline)):?>
             <div class="feature__text text-white row-inside--md col-md-6 px-4 py-5">
-                <h2 class="f--headline d-block mb-4"><?php echo $headline?></h2>
-                <p class="text-white d-block mb-4"><?php echo $text;?></p>
-                <?php if(!empty($link)):
-                    $link_text = $link['title'];
-                    $link_url = $link['url'];    
-                ?>
-                    <a class="link--w-arrow-white" href="<?php echo $link_url;?>">
-                        <span class="link__arrow"></span><span class="link__text"><?php echo $link_text;?></span>
-                    </a>
-                <?php endif;?>
+                <div class="feature__text-container">
+                    <h2 class="f--headline d-block mb-4"><?php echo $headline?></h2>
+                    <p class="text-white d-block mb-4"><?php echo $text;?></p>
+                    <?php if(!empty($link)):
+                        $link_text = $link['title'];
+                        $link_url = $link['url'];    
+                    ?>
+                        <a class="link--w-arrow-white" href="<?php echo $link_url;?>">
+                            <span class="link__arrow"></span><span class="link__text"><?php echo $link_text;?></span>
+                        </a>
+                    <?php endif;?>
+                </div>
+                
             </div>
         <?php endif;?>
     </div>

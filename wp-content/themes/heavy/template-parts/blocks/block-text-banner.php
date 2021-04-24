@@ -9,7 +9,7 @@ $banner_desc = get_sub_field('description');
 ?>
 
 <?php if(!empty($banner_title)):?>
-    <div class="text-banner container d-md-flex row-inside--md">
+    <div class="text-banner container d-md-flex row-inside--lg px-md-0">
         <div class="text-banner__col text-banner__col--title col-md">
             <h4><?php echo $banner_title;?></h4>
         </div>

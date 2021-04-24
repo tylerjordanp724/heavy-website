@@ -7,7 +7,7 @@
 $title = get_sub_field('title');
 ?>
 
-<div class="careers row-inside--lg">
+<div class="careers row-inside--lg bg--white-1">
     <div class="careers__container container">
         <?php if(!empty($title)):?>
             <div class="section-title">

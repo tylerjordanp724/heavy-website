@@ -8,7 +8,7 @@ $title = get_sub_field('title');
 $link = get_sub_field('link');
 $featured_post = get_sub_field('featured_post');
 ?>
-<div class="teaser-row teaser--featured-post row-inside--lg">
+<div class="teaser-row teaser--featured-post row-inside--xl">
     <div class="teaser-row__container container">
         <div class="teaser-header d-md-flex row-outside--md justify-content-between">
             <?php if(!empty($title)):?>
