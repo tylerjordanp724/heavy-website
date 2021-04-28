@@ -7,7 +7,7 @@
 $title = get_sub_field('title');
 $case_study = get_sub_field('case_studies_list');
 ?>
-<div class="collection--list row-inside--md">
+<div class="collection--list row-inside--lg">
     <div class="collection__wrapper container">
         <div class="collection__title">
             <?php if(!empty($title)):?>

@@ -8,7 +8,7 @@
 $title = get_sub_field('title');
 $logo_grid =  get_sub_field('logo_grid');
 ?>
-<div class="content-list content-list--logo-grid row-inside--md">
+<div class="content-list content-list--logo-grid row-inside--lg">
     <div class="content-list__wrapper container">
         <?php if(!empty($title)):?>
             <div class="content-list__title">
