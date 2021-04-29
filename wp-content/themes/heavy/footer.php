@@ -10,21 +10,25 @@
  */
 
 ?>
-	<div class="modal">
-		<div class="modal__close">
-			<div class="btn--close">
+	<?php if(!empty(get_field('shortcode', 'option'))):?>
+		<div class="modal-window">
+			<div class="modal-window__close">
 				<div class="close__slice"></div>
 				<div class="close__slice"></div>
 			</div>
+			<div class="modal-window-content__container">
+				<div class="contact-form">
+					<div class="contact-form__inner row-inside--md bg--gray-1">
+						<?php echo do_shortcode(get_field('shortcode', 'option'));?>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="modal__container">
-			<!-- contact form shortcode goes here -->
-		</div>
-	</div>
+	<?php endif;?>
 	<footer class="footer">
 		<div class="footer__container container m-auto no-gutters d-md-flex py-4">
 			<div class="footer__col d-md-none">
-				<a class="btn">
+				<a class="btn btn--contact btn--modal">
 					<span class="btn__text">Contact Us</span><span class="btn__arrow"></span>
 				</a>
 			</div>
@@ -51,7 +55,7 @@
 					</ul>
 				</div>
 				<div class="footer__col d-none d-md-block">
-					<a class="btn btn--contact">
+					<a class="btn btn--contact btn--modal">
 						<span class="btn__text">Contact Us</span><span class="btn__arrow"></span>
 					</a>
 				</div>

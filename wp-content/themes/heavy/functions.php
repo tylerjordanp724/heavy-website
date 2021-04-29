@@ -265,6 +265,14 @@ if( function_exists('acf_add_options_page') )
         'icon_url'      => 'dashicons-portfolio',
         'redirect'      => false,
     ));
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Contact Form',
+		'menu_title'	=> 'Contact Form',
+		'menu_slug' 	=> 'contact-form',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
 }
 
 

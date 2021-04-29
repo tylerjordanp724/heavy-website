@@ -76,9 +76,7 @@ function careers() {
 }
 
 function case_study_caorusel() {
-    $('.carousel .carousel__container').flickity({
-        cellAlign: 'right'
-    });
+    $('.carousel .carousel__container').flickity();
 } 
 
 function content_carousel() {
@@ -125,16 +123,16 @@ function gt_hover() {
 
 function contact_modal() {
     var $modal_trigger = $('.btn--modal');
-        $modal_close = $('.btn--close');
+        $modal_close = $('.modal-window__close');
 
     $modal_trigger.click(function(e){
         e.preventDefault();
 
-        $('body').find('.modal').addClass('open');
+        $('body').addClass('modal-open');
     });
 
     $modal_close.click(function(){
-        $('.modal').removeClass('open');
+        $('body').removeClass('modal-open');
     });
 }
 
@@ -145,10 +143,11 @@ function contact_modal() {
 $(document).ready(function() {
     header_scroll();
     careers();
+    contact_modal();
     case_study_caorusel();
     content_carousel();
     //feature_video();
     grid_sort();
     gt_hover();
-    $('.feature-video-item')[0].play();
+    //$('.feature-video-item')[0].play();
 });

@@ -462,6 +462,10 @@ Grid Sort
         transform: translateX(-15px);
         margin-bottom: 30px;
 
+        h3 {
+            @include font-size(20);
+        }
+
         
         &--xl {
             width: 100%;

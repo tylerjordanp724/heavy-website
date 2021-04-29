@@ -36,6 +36,14 @@ Carousel
     }
 }
 
+.carousel--case-study .carousel__container .carousel__image,
+.carousel--case-study .carousel__container .carousel__video {
+    @include breakFirst($screen-md) {
+        max-width: 940px;
+        transform: translateX(-8%);
+    }
+}
+
 .post-block-carousel .carousel__container .carousel__image {
     width: 100%;
 }
@@ -149,6 +157,7 @@ Features
             overflow: hidden;
             transform: scale(1);
             transform-origin: 50% 0;
+            transition: transform 0.5s $cbTrans;
         }
 
         @include breakFirst($screen-md) {
@@ -162,6 +171,7 @@ Features
             &:hover .feature__overlay {
                 opacity: 1;
                 visibility: visible;
+                padding: 0 !important;
     
                 .feature__col {
                     transform: translateX(0);
@@ -173,6 +183,14 @@ Features
             .feature__video {
                 transform: scale(0.7);
                 box-shadow: 0 50px 50px rgba(0,0,0,0.5);
+            }
+        }
+
+        &:hover {
+            padding: 0;
+            .feature__video {
+                top: 0;
+                transform: scale(1.1);
             }
         }
     }

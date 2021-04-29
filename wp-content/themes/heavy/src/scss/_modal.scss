@@ -1,0 +1,98 @@
+.modal-window {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    @include background-opacity($black, 0.9);
+    top: 0;
+    left: 0;
+    @extend .row-inside--xl;
+    overflow: auto;
+
+    &__close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 35px;
+        height: 35px;
+        border: 1px solid $white;
+        border-radius: 100%;
+        cursor: pointer;
+        padding: 5px;
+        transform: rotate(45deg);
+
+        .close__slice {
+            position: relative;
+            width: calc(100%);
+            height: 1px;
+            background-color: $white;
+            margin: auto;
+            top: 10px;
+            left: 0;
+            right: 0;
+            transform-origin: center;
+        }
+
+        .close__slice:last-child {
+            transform: rotate(90deg);
+        }
+    }
+
+    &-content__container {
+        max-width: 800px;
+        margin: auto;
+        position: relative;
+        height: auto;
+    }
+
+    .contact-form {
+        color: $white;
+        top: 40px;
+        opacity: 0;
+        visibility: 0;
+        transition: opacity 0.3s $cbTrans 2s, visibility 0.3s $cbTrans 2s;
+
+        input[type="email"],
+        input[type="text"],
+        input[type="textarea"],
+        textarea {
+            background-color: transparent;
+            border: 1px solid $white;
+            padding: 10px;
+            color: $white;
+        }
+
+        .nf-form-title {
+            color: $white;
+    
+            h3 {
+                margin-bottom: 15px;
+            }
+        }
+
+        .nf-form-fields-required,
+        .nf-response-msg p {
+            color: $white;
+        }
+
+        .nf-error-msg,
+        .nf-error-required-error {
+            color: $red;
+        }
+    }
+
+}
+
+body.modal-open {
+    overflow: hidden;
+    
+    .modal-window {
+        display: block;
+
+        .contact-form {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

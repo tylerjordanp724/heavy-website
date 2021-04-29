@@ -1,6 +1,8 @@
 
 
-a.btn, .btn {
+a.btn, .btn,
+input[type="button"] {
+    cursor: pointer;
     display: flex;
     width: auto;
     padding: 16px 20px;
