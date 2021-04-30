@@ -121,14 +121,24 @@ function gt_hover() {
     });
 }
 
-function contact_modal() {
+function modal_toggle() {
     var $modal_trigger = $('.btn--modal');
         $modal_close = $('.modal-window__close');
 
     $modal_trigger.click(function(e){
         e.preventDefault();
 
+        var modalContent = $(this).attr('data-content');
+        console.log(modalContent);
+
         $('body').addClass('modal-open');
+        if(modalContent === 'video') {
+            $('.modal-window-content--form').removeClass('active');
+            $('.modal-window-content--video').addClass('active');
+        } else if (modalContent === 'form') {
+            $('.modal-window-content--video').removeClass('active');
+            $('.modal-window-content--form').addClass('active');
+        }
     });
 
     $modal_close.click(function(){
@@ -143,7 +153,7 @@ function contact_modal() {
 $(document).ready(function() {
     header_scroll();
     careers();
-    contact_modal();
+    modal_toggle();
     case_study_caorusel();
     content_carousel();
     //feature_video();

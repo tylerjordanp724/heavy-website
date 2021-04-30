@@ -8,27 +8,45 @@
  *
  * @package heavy
  */
-
+$hero = get_field('case_study_hero');
+if(!empty($hero)) {
+	$hero_type = $hero['hero_type'];    
+    $video_url = $hero['video_url'];
+    $vimeo_id = $hero['vimeo_id']; 
+}
+    
 ?>
-	<?php if(!empty(get_field('shortcode', 'option'))):?>
+  
+
+	
 		<div class="modal-window">
 			<div class="modal-window__close">
 				<div class="close__slice"></div>
 				<div class="close__slice"></div>
 			</div>
-			<div class="modal-window-content__container">
-				<div class="contact-form">
-					<div class="contact-form__inner row-inside--md bg--gray-1">
-						<?php echo do_shortcode(get_field('shortcode', 'option'));?>
+			<?php if(!empty(get_field('shortcode', 'option'))):?>
+				<div class="modal-window-content__container modal-window-content--form">
+					<div class="contact-form">
+						<div class="contact-form__inner row-inside--md bg--gray-1">
+							<?php echo do_shortcode(get_field('shortcode', 'option'));?>
+						</div>
 					</div>
 				</div>
-			</div>
+			<?php endif;?>
+			<?php if(!empty($vimeo_id)):?>
+				<div class="modal-window-content__container modal-window-content--video">
+					<div class="video-wrapper">
+						<iframe src="https://player.vimeo.com/video/<?php echo $vimeo_id;?>" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+				</div>
+			<?php endif;?>
 		</div>
-	<?php endif;?>
+		
+	
 	<footer class="footer">
 		<div class="footer__container container m-auto no-gutters d-md-flex py-4">
 			<div class="footer__col d-md-none">
-				<a class="btn btn--contact btn--modal">
+				<a class="btn btn--contact btn--modal" data-content="form">
 					<span class="btn__text">Contact Us</span><span class="btn__arrow"></span>
 				</a>
 			</div>
@@ -55,7 +73,7 @@
 					</ul>
 				</div>
 				<div class="footer__col d-none d-md-block">
-					<a class="btn btn--contact btn--modal">
+					<a class="btn btn--contact btn--modal" data-content="form">
 						<span class="btn__text">Contact Us</span><span class="btn__arrow"></span>
 					</a>
 				</div>

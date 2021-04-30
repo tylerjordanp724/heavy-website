@@ -39,19 +39,31 @@
         }
     }
 
-    &-content__container {
+    &-content__container,
+    &-content--form, &-content--video {
         max-width: 800px;
         margin: auto;
         position: relative;
         height: auto;
+        display: none;
+
+        .video-wrapper {
+            height: 0;
+            width: 100%;
+            padding-bottom: 56.25%;
+            iframe {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
     }
 
     .contact-form {
         color: $white;
         top: 40px;
-        opacity: 0;
-        visibility: 0;
-        transition: opacity 0.3s $cbTrans 2s, visibility 0.3s $cbTrans 2s;
 
         input[type="email"],
         input[type="text"],
@@ -90,9 +102,9 @@ body.modal-open {
     .modal-window {
         display: block;
 
-        .contact-form {
-            opacity: 1;
-            visibility: visible;
+        &-content--form.active,
+        &-content--video.active {
+            display: block;
         }
     }
 }
