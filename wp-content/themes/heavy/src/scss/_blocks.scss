@@ -283,6 +283,15 @@ Hero
         position: relative;
         height: 75vh;
         overflow: hidden;
+
+        .hero__overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
         
         &-vimeo {
             height: 0;

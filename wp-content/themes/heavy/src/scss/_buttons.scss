@@ -142,3 +142,26 @@ a.link--w-arrow {
         }
     }
 }
+
+.btn--play {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: $gray1;
+    cursor: pointer;
+    position: relative;
+
+    span.play__arrow {
+        display: block;
+        margin: auto;
+        width: 10px;
+        height: 10px;
+        border-top: 10px solid transparent;
+        border-left: 15px solid $white;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        left: 20px;
+    }
+}

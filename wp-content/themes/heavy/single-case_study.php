@@ -23,16 +23,30 @@ get_header();
     
     <?php if($hero_type === 'video'):?>
         <?php if(!empty($video_url)):?>
+            <!-- This should be a background video -->
             <div class="hero hero--case-study-video">
                 <video class="hero__video" autoplay="true" mute loop>
                     <source src="<?php echo $video_url;?>">
                 </video>
+                <?php if(!empty($vimeo_id)):?>
+                    <div class="hero__overlay d-flex align-items-center justify-content-center">
+                        <div class="btn--play">
+                            <span class="play__arrow"></div>
+                        </div>
+                    </div>    
+                <?php endif;?>
             </div>
         <?php endif;?>
 
         <?php if(!empty($vimeo_id)):?>
-            <div class="hero hero--case-study-video-vimeo">
-                <iframe src="https://player.vimeo.com/video/<?php echo $vimeo_id;?>" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div class="modal-window">
+                <div class="modal-window__close">
+                    <div class="close__slice"></div>
+                    <div class="close__slice"></div>
+                </div>
+                <div class="modal-window-content__container">
+                    <iframe src="https://player.vimeo.com/video/<?php echo $vimeo_id;?>" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
             </div>
         <?php endif;?>
     
