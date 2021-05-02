@@ -37,6 +37,8 @@ function header_scroll() {
     }
 }
 
+function menu_toggle() {}
+
 function careers() {
     var $career_item = $('.career__title-list ul li');
         $first_nav_item = $('.career__title-list ul li:first');
@@ -157,6 +159,7 @@ $(document).ready(function() {
     case_study_caorusel();
     content_carousel();
     //feature_video();
+    menu_toggle();
     grid_sort();
     gt_hover();
     //$('.feature-video-item')[0].play();

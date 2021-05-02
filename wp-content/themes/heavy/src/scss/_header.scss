@@ -12,7 +12,7 @@
 */
 header.header {
     width: 100%;
-    height: 83px;
+    height: auto;
     padding: 25px;
     position: fixed;
     top: 0;
@@ -21,13 +21,17 @@ header.header {
     transition: transform 0.3s $cbTrans;
     background-color: $white;
 
-    &.nav-up {
-        transform: translateY(-83px);
+    @include breakFirst($screen-md) {
+        &.nav-up {
+            transform: translateY(-83px);
+        }
+
+        &.nav-down {
+            transform: translateY(0);
+        }
     }
 
-    &.nav-down {
-        transform: translateY(0);
-    }
+    
 
     .logo {
         width: 84px;
@@ -49,13 +53,79 @@ header.header {
         }
     }
 
-    nav ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        margin-bottom: 0;
-        
-        li {
+    .header__wrap--mobile {
+        .header__wrap--top {
+            .menu-btn {
+                width: 35px;
+                height: 27px;
+                overflow: hidden;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .menu-btn .menu-btn__slice {
+                width: 100%;
+                height: 2px;
+                background-color: $black;
+                position: absolute;
+                transition: transform 0.3s $cbTrans, opacity 0.3s $cbTrans;
+            }
+
+            .menu-btn .menu-btn__slice:nth-child(1) {
+                top: 0px;
+            }
+            .menu-btn .menu-btn__slice:nth-child(2) {
+                top: 10px;
+            }
+
+            .menu-btn .menu-btn__slice:nth-child(3) {
+                top: 20px;
+            }
+        }
+        .header__wrap--body {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            @include background-opacity($black, 0.8);
+            top: 75px;
+            left: 0;
+
+            nav {
+                display: block;
+                width: 100%;
+                height: fit-content;
+                background-color: $white;
+                padding-bottom: 15px;
+            }
+
+            nav ul {
+                list-style: none;
+                margin-bottom: 0;
+                padding-left: 30px;
+            }
+
+            nav ul li {
+                padding: 15px 0;
+                @include font-size(24);
+            }
+
+            nav ul li a {
+                text-decoration: none;
+                color: $black;
+            }
+        }
+    }
+
+    .header__wrap--desktop {
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin-bottom: 0;
+        }
+
+        nav ul li {
             display: block;
             margin: 0 16px;
             @include font-size(20);
@@ -107,6 +177,8 @@ header.header {
             }
         }
     }
+
+    
 
     &--blog {
         background-color: $gray1;
