@@ -154,6 +154,38 @@ function modal_toggle() {
     });
 }
 
+function heavy_loadmore() {
+    $('.btn--loadmore').click(function(){
+        var button = $(this);
+            data = {
+                'action': 'loadmore',
+                'query': heavy_loadmore_params.posts,
+                'page': heavy_loadmore_params.current_page
+            };
+
+        $.ajax({
+            url: heavy_loadmore_params.ajaxurl,
+            data: data,
+            type: 'POST',
+            beforeSend: function(xhr) {
+                button.text('Loading...');
+            },
+            success: function(data) {
+                if(data) {
+                    button.text('Load more posts').prev().before(data);
+                    heavy_loadmore_params.current_page++;
+
+                    if(heav_loadmore_params.current_page == heavy_loadmore_params.max_page) {
+                        button.remove();
+                    }
+                } else {
+                    button.remove();
+                }
+            }
+        });
+    });
+}
+
 // function feature_video() {
 //     $('.feature-video-item')[0].play();
 // }
@@ -168,5 +200,6 @@ $(document).ready(function() {
     menu_toggle();
     grid_sort();
     gt_hover();
+    heavy_loadmore();
     //$('.feature-video-item')[0].play();
 });

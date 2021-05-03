@@ -140,6 +140,7 @@ add_action( 'widgets_init', 'heavy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function heavy_assets() {
+	global $wp_query; 
 	// styles
 	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), '4.1.3','all');
 
@@ -154,12 +155,53 @@ function heavy_assets() {
 	
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array(), null, true );
 
+	wp_register_script( 'heavy_loadmore', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery') );
+	wp_localize_script( 'scripts', 'heavy_loadmore_params', array(
+		'ajaxurl' => 'http://local.heavy/wp-admin/admin-ajax.php', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+
 	// comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'heavy_assets' );
+
+function heavy_loadmore_ajax_handler(){
+ 
+	// prepare our arguments for the query
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+	$args['post_status'] = 'publish';
+ 
+	// it is always better to use WP_Query but not here
+	query_posts( $args );
+ 
+	if( have_posts() ) :
+		echo '<div class="posts__wrapper d-md-flex justify-content-md-between row px-0 pt-4">';
+		// run the loop
+		while( have_posts() ): the_post();
+ 
+			// look into your theme code how the posts are inserted, but you can use your own HTML of course
+			// do you remember? - my example is adapted for Twenty Seventeen theme
+			get_template_part( 'template-parts/content-teaser', get_post_format() );
+			// for the test purposes comment the line above and uncomment the below one
+			// the_title();
+ 
+ 
+		endwhile;
+		echo '</div>';
+	endif;
+	die; // here we exit the script and even no wp_reset_query() required!
+}
+ 
+ 
+ 
+add_action('wp_ajax_loadmore', 'heavy_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'heavy_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
 
 function bg_color() {

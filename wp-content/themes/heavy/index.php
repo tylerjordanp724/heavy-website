@@ -78,11 +78,18 @@ get_header();
 										<a href="<?php echo get_permalink();?>" class="btn btn--fit-content btn--gray-1-solid">Read More</a>
 									</div>
 								</div>
+			
 							<?php endwhile; wp_reset_postdata();?>
 						</div>
 					<div>
 				</div>
 			<?php endif;?>
+			<?php
+				global $wp_query; 
+				// don't display the button if there are not enough posts
+				if (  $wp_query->max_num_pages > 1 )
+				echo '<div class="btn btn--gray-1 btn--loadmore m-auto">Load more posts</div>'; // you can use <a> as well
+			?>
 		<?php endif; wp_reset_postdata();?>
 		
 
