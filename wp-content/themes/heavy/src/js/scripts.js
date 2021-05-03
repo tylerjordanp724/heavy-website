@@ -37,7 +37,14 @@ function header_scroll() {
     }
 }
 
-function menu_toggle() {}
+function menu_toggle() {
+    var $menuToggle = $('.menu-btn');
+
+    $menuToggle.click(function(){
+        $(this).toggleClass('active');
+        $('body, .header__wrap--mobile').toggleClass('menu-open');
+    });
+}
 
 function careers() {
     var $career_item = $('.career__title-list ul li');
@@ -131,7 +138,6 @@ function modal_toggle() {
         e.preventDefault();
 
         var modalContent = $(this).attr('data-content');
-        console.log(modalContent);
 
         $('body').addClass('modal-open');
         if(modalContent === 'video') {

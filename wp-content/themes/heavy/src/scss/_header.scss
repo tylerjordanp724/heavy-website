@@ -58,7 +58,6 @@ header.header {
             .menu-btn {
                 width: 35px;
                 height: 27px;
-                overflow: hidden;
                 position: relative;
                 cursor: pointer;
             }
@@ -74,18 +73,37 @@ header.header {
             .menu-btn .menu-btn__slice:nth-child(1) {
                 top: 0px;
             }
+
             .menu-btn .menu-btn__slice:nth-child(2) {
                 top: 10px;
+                opacity: 1;
             }
 
             .menu-btn .menu-btn__slice:nth-child(3) {
                 top: 20px;
             }
+
+            .menu-btn.active {
+
+                .menu-btn__slice:nth-child(1) {
+                    transform: translateY(10px) rotate(45deg);
+                }
+
+                .menu-btn__slice:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .menu-btn__slice:nth-child(3) {
+                    transform: translateY(-10px) rotate(-45deg);
+                }
+            }
         }
+
         .header__wrap--body {
             position: fixed;
             width: 100%;
-            height: 100%;
+            height: 0;
+            overflow: hidden;
             @include background-opacity($black, 0.8);
             top: 75px;
             left: 0;
@@ -96,6 +114,8 @@ header.header {
                 height: fit-content;
                 background-color: $white;
                 padding-bottom: 15px;
+                transform: translateX(-100%);
+                transition: transform 0.3s $cbTrans;
             }
 
             nav ul {
@@ -114,10 +134,18 @@ header.header {
                 color: $black;
             }
         }
+        
+
+        &.menu-open .header__wrap--body {
+            height: 100%;
+
+            nav {
+                transform: translateX(0);
+            }
+        }
     }
 
     .header__wrap--desktop {
-
         nav ul {
             list-style: none;
             padding: 0;
@@ -182,15 +210,24 @@ header.header {
 
     &--blog {
         background-color: $gray1;
+        .header__wrap--mobile .header__wrap--body nav {
+            background-color: $gray1;
+        }
+
+        .header__wrap--mobile .header__wrap--top .menu-btn .menu-btn__slice {
+            background-color: $white;
+        }
     }
 
-    &--blog, &--transparent {
+    &--blog {
         
         .logo svg {
             fill: $white;
         }
         
-        nav ul li a {
+        
+        .header__wrap--desktop nav ul li a,
+        .header__wrap--mobile .header__wrap--body nav ul li a {
             color: $white;
 
             &:before {
@@ -198,20 +235,45 @@ header.header {
             }
         }
 
-        nav ul li a:hover {
+        .header__wrap--desktop nav ul li a:hover,
+        .header__wrap--mobile nav ul li a {
             color: $white;
         }
     }
 
     &--transparent {
-        background-color: transparent;
-        color: $white;
-        position: absolute;
         
-        & + .hero--w-image {
-            margin-top: -83px;
+        @include breakFirst($screen-sm) {
+            background-color: transparent;
+            color: $white;
+            position: absolute;
+            
+            .logo svg {
+                fill: $white;
+            }
+
+            .header__wrap--desktop nav ul li a {
+                color: $white;
+
+                &:before {
+                    background-color: $white;
+                }
+            }
+
+            .header__wrap--desktop nav ul li a:hover {
+                color: white;
+            }
+
+            & + .hero--w-image {
+                margin-top: -83px;
+            }
         }
+        
     }
+}
+
+body.menu-open {
+    overflow-y: hidden;
 }
 
 
