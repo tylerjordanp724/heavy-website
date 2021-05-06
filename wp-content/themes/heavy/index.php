@@ -84,13 +84,13 @@ get_header();
 					<div>
 				</div>
 			<?php endif;?>
-			<?php
-				global $wp_query; 
-				// don't display the button if there are not enough posts
-				if (  $wp_query->max_num_pages > 1 )
-				echo '<div class="btn btn--gray-1 btn--loadmore m-auto">Load more posts</div>'; // you can use <a> as well
-			?>
 		<?php endif; wp_reset_postdata();?>
+		<?php
+			global $wp_query; 
+			// don't display the button if there are not enough posts
+			if (  $wp_query->max_num_pages > 1 )
+			echo '<div class="btn btn--gray-1 btn--loadmore m-auto">Load more posts</div>'; // you can use <a> as well
+		?>
 		
 
 	</main><!-- #main -->

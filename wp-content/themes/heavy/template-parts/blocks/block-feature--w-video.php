@@ -10,11 +10,7 @@ $feature_link = get_sub_field('link');
 ?>
 
 <div class="feature feature--w-video row-inside--lg">
-    <div class="feature__video">
-        <video class="feature-video-item" autoplay mute loop>
-            <source src="<?php echo $feature_video;?>">
-        </video>
-    </div>
+    <div class="feature__video" data-vide-bg="<?php echo $feature_video;?>" data-vide-options="loop: true, muted: true"></div>
     <?php if(!empty($feature_text)):?>
         <div class="feature__overlay row-inside--lg container-fluid d-flex align-items-end">
             <div class="feature__col col-md-5 m-md-auto">

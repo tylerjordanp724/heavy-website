@@ -114,7 +114,9 @@ get_header();
     <?php elseif($content_block == 'image_banner'):?>
         <?php get_template_part('template-parts/blocks/block', 'image-banner');?>
     <?php elseif($content_block == 'text_banner'):?>
-        <?php get_template_part('template-parts/blocks/block', 'text-banner');?>   
+        <?php get_template_part('template-parts/blocks/block', 'text-banner');?>
+    <?php elseif($content_block == 'video'):?>
+        <?php get_template_part('template-parts/blocks/block', 'video');?>     
 <?php endif;?>
 <!-- content blocks go here -->
 <?php endwhile; endif;?>

@@ -54,6 +54,8 @@
         <?php get_template_part('template-parts/blocks/block', 'text-banner');?>
     <?php elseif($content_block === 'stats'):?>
         <?php get_template_part('template-parts/blocks/block', 'stats');?>
+    <?php elseif($post_content_block === 'video'):?>
+        <?php get_template_part('template-parts/blocks/block', 'video');?>
     
     
     <?php endif;?>

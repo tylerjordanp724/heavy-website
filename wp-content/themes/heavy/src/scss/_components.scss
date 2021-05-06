@@ -550,6 +550,10 @@ Grid Sort
     }
 }
 
+.stat h1 {
+    @include font-size(84);
+}
+
 /*
 Teasers
 ==================

@@ -157,7 +157,7 @@ function heavy_assets() {
 
 	wp_register_script( 'heavy_loadmore', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery') );
 	wp_localize_script( 'scripts', 'heavy_loadmore_params', array(
-		'ajaxurl' => 'http://local.heavy/wp-admin/admin-ajax.php', // WordPress AJAX
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'max_page' => $wp_query->max_num_pages

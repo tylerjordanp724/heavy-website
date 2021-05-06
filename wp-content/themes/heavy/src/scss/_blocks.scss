@@ -370,6 +370,7 @@ Post Video
 ==================
 */
 
+.video,
 .post-block-video {
     .video__container {
         position: relative;
@@ -384,6 +385,10 @@ Post Video
             height: 100%;
         }
     }
+}
+
+.video .video__container {
+    padding-bottom: 40vw;
 }
 
 
