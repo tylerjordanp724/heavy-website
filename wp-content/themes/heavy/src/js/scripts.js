@@ -4,7 +4,7 @@ function header_scroll() {
     var delta = 5;
     var navbarHeight = $('header').outerHeight();
     
-    $(window).scroll(function(){
+    $(window).on('scroll',function(){
         didScroll = true;
     });
 
@@ -40,7 +40,7 @@ function header_scroll() {
 function menu_toggle() {
     var $menuToggle = $('.menu-btn');
 
-    $menuToggle.click(function(){
+    $menuToggle.on('click',function(){
         $(this).toggleClass('active');
         $('body, .header__wrap--mobile').toggleClass('menu-open');
     });
@@ -69,7 +69,7 @@ function careers() {
     });
     
 
-    $career_item.click(function(){
+    $career_item.on('click', function(){
         var $curr_item = $('#' + $(this).attr('data-title'));
             $curr_item_height = $curr_item.outerHeight();
             $item_parent = $('.career__desc');
@@ -85,12 +85,15 @@ function careers() {
 }
 
 function case_study_caorusel() {
-    $('.carousel .carousel__container').flickity();
+    $('.carousel .carousel__container').flickity({
+        wrapAround: true
+    });
 } 
 
 function content_carousel() {
     $('.carousel--content, .post-block-carousel__inner').flickity({
-        cellAlign: 'center'
+        cellAlign: 'center',
+        wrapAround: true
     });
 }
 
@@ -118,23 +121,23 @@ function grid_sort() {
 
 }
 
-function gt_hover() {
-    $(".left-col").hover(function () {
-        $(this).toggleClass("active");
-        $(this).next().toggleClass("push-r");
-    });
+// function gt_hover() {
+//     $(".left-col").hover(function () {
+//         $(this).toggleClass("active");
+//         $(this).next().toggleClass("push-r");
+//     });
     
-    $(".right-col").hover(function () {
-        $(this).toggleClass("active");
-        $(this).prev().toggleClass("push-l");
-    });
-}
+//     $(".right-col").hover(function () {
+//         $(this).toggleClass("active");
+//         $(this).prev().toggleClass("push-l");
+//     });
+// }
 
 function modal_toggle() {
     var $modal_trigger = $('.btn--modal');
         $modal_close = $('.modal-window__close');
 
-    $modal_trigger.click(function(e){
+    $modal_trigger.on('click', function(e){
         e.preventDefault();
 
         var modalContent = $(this).attr('data-content');
@@ -155,7 +158,7 @@ function modal_toggle() {
 }
 
 function heavy_loadmore() {
-    $('.btn--loadmore').click(function(){
+    $('.btn--loadmore').on('click', function(){
         var button = $(this);
             data = {
                 'action': 'loadmore',
@@ -186,20 +189,13 @@ function heavy_loadmore() {
     });
 }
 
-// function feature_video() {
-//     $('.feature-video-item')[0].play();
-// }
-
-$(document).ready(function() {
+$(function() {
     header_scroll();
     careers();
     modal_toggle();
     case_study_caorusel();
     content_carousel();
-    //feature_video();
     menu_toggle();
     grid_sort();
-    gt_hover();
     heavy_loadmore();
-    //$('.feature-video-item')[0].play();
 });

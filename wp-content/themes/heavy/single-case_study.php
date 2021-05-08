@@ -23,11 +23,7 @@ get_header();
     
     <?php if($hero_type === 'video'):?>
         <?php if(!empty($video_url)):?>
-            <!-- This should be a background video -->
-            <div class="hero hero--case-study-video">
-                <video class="hero__video" autoplay="true" mute loop>
-                    <source src="<?php echo $video_url;?>">
-                </video>
+            <div class="hero hero--case-study-video" data-vide-bg="<?php echo $video_url;?>" data-vide-options="loop: true, muted: true">
                 <?php if(!empty($vimeo_id)):?>
                     <div class="hero__overlay d-flex align-items-center justify-content-center">
                         <div class="btn--play btn--modal" data-content="video">

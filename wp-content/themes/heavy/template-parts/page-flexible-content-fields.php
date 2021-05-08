@@ -10,6 +10,8 @@
 ?>
     <?php if($content_block == 'text_hero'):?>
         <?php get_template_part('template-parts/blocks/block', 'text-hero');?>
+    <?php elseif($content_block == 'video_hero'):?>
+        <?php get_template_part('template-parts/blocks/block', 'video-hero');?>
     <?php elseif($content_block == 'hero_w_image'):?>
         <?php get_template_part('template-parts/blocks/block', 'hero--w-image');?>
     <?php elseif($content_block == 'feature_w_video'):?>
