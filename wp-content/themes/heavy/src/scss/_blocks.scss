@@ -4,22 +4,11 @@ Carousel
 */
 .carousel--case-study .carousel__container,
 .post-block-carousel .carousel__container {
-    height: 300px;
-
-    @include breakFirst($screen-sm) {
-        height: 400px;
-    }
-
-    @include breakFirst($screen-md) {
-        height: 500px;
-    }
-
-    .flickity-viewport {
-        height: 100% !important;
-    }
+   
+    margin-bottom: 30px;
 
     .flickity-page-dots {
-        bottom: 8%;
+        bottom: -30px;
     }
 
     .carousel__image, .carousel__video {
@@ -52,10 +41,19 @@ Carousel
     height: auto;
     .carousel__video {
         position: relative;
-        height: 100%;
+        height: 328px;
 
-        video {
+        @include breakFirst($screen-xs) {
+            height: 450px;
+        }
+
+        @include breakFirst($screen-md) {
+            height: 528px;
+        }
+
+        video, iframe {
             object-fit: cover;
+            height: 100%;
         }
     }
 }
@@ -158,7 +156,12 @@ Features
             transform: scale(1);
             transform-origin: 50% 0;
             transition: transform 0.5s $cbTrans;
+            
         }
+
+        // .feature__overlay {
+        //     padding: 0 !important;
+        // }
 
         @include breakFirst($screen-md) {
             height: 60vw;
@@ -184,15 +187,17 @@ Features
                 transform: scale(0.7);
                 box-shadow: 0 50px 50px rgba(0,0,0,0.5);
             }
-        }
 
-        &:hover {
-            padding: 0;
-            .feature__video {
-                top: 0;
-                transform: scale(1.1);
+            &:hover {
+                padding: 0;
+                .feature__video {
+                    top: 0;
+                    transform: scale(1.1);
+                }
             }
         }
+
+        
     }
     
 }
@@ -221,20 +226,6 @@ Grid Sort
             color: $white;
         }
     }
-}
-
-
-.image-banner__container {
-    height: 300px;
-
-    @include breakFirst($screen-sm) {
-        height: 400px;
-    }
-
-    @include breakFirst($screen-md) {
-        height: 500px;
-    }
-
 }
 
 
@@ -316,7 +307,8 @@ Hero
         overflow: hidden;
 
         @include breakFirst($screen-sm) {
-            height: 75vh;
+            margin-top: 83px; 
+            height: 80vh;
         }
         
         figure {
@@ -441,7 +433,7 @@ Post Video
 }
 
 .video .video__container {
-    padding-bottom: 40vw;
+    padding-bottom: 48.5vw;
 }
 
 

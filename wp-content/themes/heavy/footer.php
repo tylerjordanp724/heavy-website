@@ -66,10 +66,10 @@ if(!empty($hero)) {
 			<div class="footer__col-wrap col-md d-md-flex">
 				<div class="footer__col col-md px-0">
 					<ul>
-						<li><a href="">Instagram</a></li>
-						<li><a href="">Twitter</a></li>
-						<li><a href="">LinkedIn</a></li>
-						<li><a href="">Facebook</a></li>
+						<li><a href="https://www.instagram.com/heavy_does_it/?igshid=1oedgqjj36iir" target="_blank">Instagram</a></li>
+						<li><a href="https://twitter.com/Heavy_Does_It" target="_blank">Twitter</a></li>
+						<li><a href="https://www.linkedin.com/company/heavy-studios/mycompany/" target="_blank">LinkedIn</a></li>
+						<li><a href="https://www.facebook.com/HeavyDoesIt/" target="_blank">Facebook</a></li>
 					</ul>
 				</div>
 				<div class="footer__col d-none d-md-block">

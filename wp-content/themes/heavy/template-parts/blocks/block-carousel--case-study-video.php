@@ -48,7 +48,7 @@ $video_type = get_sub_field('video_type');
 <?php endif;?>
 
 <?php if(!empty($banner_title)):?>
-    <div class="text-banner container d-md-flex row-inside--lg">
+    <div class="text-banner container d-md-flex row-inside--lg px-md-0">
         <div class="text-banner__col text-banner__col--title col-md">
             <h4><?php echo $banner_title;?></h4>
         </div>

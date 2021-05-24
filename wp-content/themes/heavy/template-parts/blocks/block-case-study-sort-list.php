@@ -9,7 +9,7 @@ $count = 0;
 ?>
 
  
-    <div class="grid-sort-nav">
+    <!-- <div class="grid-sort-nav">
         <div class="grid-sort-nav__wrapper container">
             <div class="grid-sort-nav__list p-0">
                 <div class="btn btn--filter btn--gray-1" data-filter="*">All</div>
@@ -22,7 +22,7 @@ $count = 0;
                 <div class="btn btn--filter btn--gray-1" data-filter=".advertising">Advertising</div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="grid grid-sort__row row-inside--lg">
         <div class="grid-sort__wrapper container">
             <div class="grid-sizer"></div>

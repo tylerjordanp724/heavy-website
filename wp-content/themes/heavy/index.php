@@ -78,7 +78,6 @@ get_header();
 										<a href="<?php echo get_permalink();?>" class="btn btn--fit-content btn--gray-1-solid">Read More</a>
 									</div>
 								</div>
-			
 							<?php endwhile; wp_reset_postdata();?>
 						</div>
 					<div>

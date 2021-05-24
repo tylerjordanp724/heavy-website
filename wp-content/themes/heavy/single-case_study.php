@@ -53,10 +53,10 @@ get_header();
 ?>
     <div class="case-study__meta row-inside--lg">
         <div class="case-study__meta-wrapper container d-md-flex align-items-start">
-            <div class="case-study__meta-col col-md mb-5">
-                <h1 class="f--headline"><?php echo $display_title;?></h1>
+            <div class="case-study__meta-col col-md mb-5 pl-0">
+                <h1 class="f--headline d-block pr-5"><?php echo $display_title;?></h1>
             </div>
-            <div class="case-study__meta-col col-md d-md-flex">
+            <div class="case-study__meta-col col-md d-md-flex pl-0">
                 <?php if(!empty($client_name)):?>
                     <div class="col-md px-0 mb-4">
                         <h5 class="f--label">Client Name</h5>
@@ -87,11 +87,11 @@ get_header();
 <?php if(!empty($tagline)):?>
     <div class="case-study-intro row-inside--lg pt-0">
         <div class="case-study-intro__wrapper container d-md-flex">
-            <div class="case-study-intro__col col-md mb-5 pr-md-5">
-                <h2 class="f--headline"><?php echo $tagline;?></h2>
+            <div class="case-study-intro__col col-md mb-5 pl-0">
+                <h2 class="f--headline d-block pr-5"><?php echo $tagline;?></h2>
             </div>
             <?php if(!empty($full_desc)):?>
-                <div class="case-study-intro__col col-md">
+                <div class="case-study-intro__col col-md pl-0">
                     <p><?php echo $full_desc;?></p>
                 </div>
             <?php endif;?>
@@ -116,5 +116,6 @@ get_header();
 <?php endif;?>
 <!-- content blocks go here -->
 <?php endwhile; endif;?>
+<?php get_template_part('template-parts/blocks/block', 'related-posts');?>
 
 <?php get_footer();?>

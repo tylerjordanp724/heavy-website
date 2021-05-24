@@ -417,7 +417,7 @@ Feature
     visibility: visible;
     opacity: 1;
     transition: opacity 0.3s $cbTrans, visibility 0.3s $cbTrans;
-    @include background-opacity($black, 0.5);
+    @include background-opacity($black, 0.8);
 
     .feature__col {
         transform: translateY(0);

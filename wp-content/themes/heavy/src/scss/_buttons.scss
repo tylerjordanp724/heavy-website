@@ -70,6 +70,10 @@ a.link--w-arrow {
         background-color: $black;
         margin-right: 5px;
         transition: width 0.3s $cbTrans;
+
+        &--back {
+            transform: rotate(180deg);
+        }
     }
 
     span.link__arrow:after {
