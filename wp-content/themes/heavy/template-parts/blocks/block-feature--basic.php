@@ -9,6 +9,7 @@ $headline = get_sub_field('headline');
 $text = get_sub_field('text');
 $link = get_sub_field('link');
 $image = get_sub_field('image');
+$reverse = get_sub_field('reverse_columns');
 ?>
 <?php if($orientation == 'landscape'):?>
     <div class="feature feature-basic--wide row-inside--xl" <?php bg_color();?>>
@@ -17,7 +18,7 @@ $image = get_sub_field('image');
                 <div class="feature__img img--wide row-outside--lg">
                     <figure>
                         <picture>
-                            <img src="<?php echo $image;?>"/>
+                            <img class="b-lazy" data-src="<?php echo $image;?>" src="<?php echo $image;?>"/>
                         </picture>
                     </figure>
                 </div>
@@ -44,13 +45,14 @@ $image = get_sub_field('image');
             </div>
         </div>
     </div>
-<?php elseif($orientation == 'portrait'):?>
-    <div class="feature feature-basic--tall d-md-flex align-items-center" <?php bg_color();?>>
+<?php endif;?>
+<?php if($orientation == 'portrait'):?>
+    <div class="feature feature-basic--tall d-md-flex align-items-center <?php if($reverse === true){ echo 'flex-row-reverse text-col--left';}?>" <?php bg_color();?>>
         <?php if(!empty($image)):?>
             <div class="feature__img img--tall col-md-6">
                 <figure>
                     <picture>
-                        <img src="<?php echo $image;?>"/>
+                        <img class="b-lazy" data-src="<?php echo $image;?>"/>
                     </picture>
                 </figure>
             </div>

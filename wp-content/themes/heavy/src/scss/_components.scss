@@ -66,7 +66,19 @@
     }
 
     .carousel__slide .carousel__img figure picture {
-        padding-bottom: 45vw;
+        padding-bottom: 56.25;
+
+        img {
+            object-fit: contain;
+        }
+
+        @include breakFirst($screen-sm) {
+            padding-bottom: 45vw;
+
+            img {
+                object-fit: cover;
+            }
+        }
     }
 }
 
@@ -442,6 +454,15 @@ Feature
     width: 85%;
 }
 
+.feature.text-col--left {
+    .feature__text .feature__text-container {
+        @include breakFirst($screen-md) {
+            position: relative;
+            left: 7.5%;
+        }
+    }
+}
+
 /*
 Grid Sort
 ==================
@@ -461,6 +482,9 @@ Grid Sort
         float: left;
         transform: translateX(-15px);
         margin-bottom: 30px;
+        .img--wide-cover figure picture {
+            padding-bottom: 56.25%;
+        }
 
         h3 {
             @include font-size(20);
@@ -473,7 +497,9 @@ Grid Sort
             right: 0;
 
             .img--wide-cover figure picture{
-                padding-bottom: 42%;
+                @include breakFirst($screen-md) {
+                    padding-bottom: 42%;
+                }
             }
 
             @include breakFirst($screen-md) {
@@ -487,7 +513,9 @@ Grid Sort
             width: 100%;
 
             .img--wide-cover figure picture{
-                padding-bottom: 48%;
+                @include breakFirst($screen-md) {
+                    padding-bottom: 48%;
+                }
             }
 
 
@@ -518,7 +546,10 @@ Grid Sort
                 width: 50%;
 
                 .img--wide-cover figure picture{
-                    padding-bottom: 75.25%;
+                    @include breakFirst($screen-md) {
+                        padding-bottom: 75.25%;
+                    }
+                    
                 }
             }
         }
@@ -530,7 +561,9 @@ Grid Sort
                 right: 0;
 
                 .img--wide-cover figure picture{
-                    padding-bottom: 75.25%;
+                    @include breakFirst($screen-md) {
+                        padding-bottom: 75.25%;
+                    }
                 }
             }
         }
@@ -541,7 +574,9 @@ Grid Sort
                 transform: translateY(45px);
 
                 .img--wide-cover figure picture{
-                    padding-bottom: 75.25%;
+                   @include breakFirst($screen-md) {
+                        padding-bottom: 75.25%;
+                    }
                 }
             }
         }

@@ -17,13 +17,14 @@ get_header();
 <?php if(!empty($hero)):
     $hero_type = $hero['hero_type'];    
     $video_url = $hero['video_url'];
-    $vimeo_id = $hero['vimeo_id'];   
+    $vimeo_id = $hero['vimeo_id'];
+    $poster_image = $hero['poster_image'];   
 ?>
     <!-- case study hero -->
     
     <?php if($hero_type === 'video'):?>
         <?php if(!empty($video_url)):?>
-            <div class="hero hero--case-study-video" data-vide-bg="<?php echo $video_url;?>" data-vide-options="loop: true, muted: true">
+            <div class="hero hero--case-study-video" data-vide-bg="mp4:<?php echo $video_url;?>, poster:<?php echo $poster_image['url'];?>" data-vide-options="loop: true, muted: true, posterType:<?php echo $poster_image['subtype'];?>">
                 <?php if(!empty($vimeo_id)):?>
                     <div class="hero__overlay d-flex align-items-center justify-content-center">
                         <div class="btn--play btn--modal" data-content="video">
@@ -40,7 +41,7 @@ get_header();
         <div class="hero hero--case-study-img">
             <figure>
                 <picture>
-                    <img src="<?php echo $image_url;?>"/>
+                    <img class="b-lazy" data-src="<?php echo $image_url;?>"/>
                 </picture>
             </figure>
         </div>
@@ -64,18 +65,14 @@ get_header();
                     </div>
                 <?php endif;?>
                 <?php if(has_category()):
-                    $categories = get_categories(array(
-                        'exclude' => array(1,3)
-                    ));    
+                    $categories = get_the_category_list();    
                 ?>
                     <div class="col-md px-0">
                         <h5 class="f--label">Services</h5>
                         <div class="list-container list-container--category">
-                            <ul>
-                                <?php foreach($categories as $category):?>
-                                    <li><?php echo $category->name;?></li>
-                                <?php endforeach;?>
-                            </ul>
+                            <?php if(!empty($categories)){
+                                echo ''.strip_tags($categories, '<ul>, <li>').'';
+                            }?>
                         </div>
                     </div>
                 <?php endif;?>

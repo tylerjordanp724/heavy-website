@@ -51,19 +51,12 @@ if(!empty($hero)) {
 				</a>
 			</div>
 			<div class="footer__col-wrap col-md d-md-flex">
-				<div class="footer__col col-md px-0">
+				<div class="footer__col col-md-8 px-0">
 					<h5>philadelphia</h5>
 					<p>200 Locust Street, Unit 7CN<p/>
 					<p>Philadelphia, PA 19106<p/><br>
 					<p><a href="tel:2159482451">(215) 948-2451</a><p/>
 				</div>
-				<div class="footer__col col-md px-0">
-					<h5>san diego</h5>
-					<p>2869 Historic Decatur Road<p/>
-					<p>San Diego, CA 92106<p/>
-				</div>
-			</div>
-			<div class="footer__col-wrap col-md d-md-flex">
 				<div class="footer__col col-md px-0">
 					<ul>
 						<li><a href="https://www.instagram.com/heavy_does_it/?igshid=1oedgqjj36iir" target="_blank">Instagram</a></li>
@@ -72,6 +65,9 @@ if(!empty($hero)) {
 						<li><a href="https://www.facebook.com/HeavyDoesIt/" target="_blank">Facebook</a></li>
 					</ul>
 				</div>
+			</div>
+			<div class="footer__col-wrap col-md d-md-flex justify-content-end">
+				
 				<div class="footer__col d-none d-md-block">
 					<a class="btn btn--contact btn--modal" data-content="form">
 						<span class="btn__text">Contact Us</span><span class="btn__arrow"></span>

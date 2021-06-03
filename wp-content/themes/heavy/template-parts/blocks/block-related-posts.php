@@ -1,17 +1,17 @@
 <?php 
 /**
-* Module Name : Related Posts
+* Block Name : Related Posts
 * 
 */
+$related_posts = get_field('related_projects');
 ?>
-
 <div class="related-posts row-inside--lg bg--gray-1 px-0">
     <div class="related-posts__inner container px-0">
             <div class="realted-post__title text-white px-3 mb-5">
-                <h1>Related Projects</h1>
+                <h4>Related Projects</h4>
             </div>
             <div class="realted-posts__post-container d-md-flex">
-                <?php foreach( $wpex_query->posts as $post ) : setup_postdata( $post );
+                <?php foreach($related_posts as $post) : setup_postdata($post);
                     $post_thumb = get_the_post_thumbnail();
                     $post_author = get_the_author();
                     $post_title = get_the_title();

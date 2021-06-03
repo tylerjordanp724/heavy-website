@@ -14,9 +14,11 @@ $featured_post = get_sub_field('featured_post');
             <?php if(!empty($title)):?>
                 <h2 class="f--headline"><?php echo $title;?></h2>
             <?php endif;?>
-            <a class="link--w-arrow" href="">
-                <span class="link__arrow"></span><span class="link__text">See All Posts</span>
-            </a>
+            <?php if(!empty($link)):?>
+                <a class="link--w-arrow" href="<?php echo $link['url'];?>">
+                    <span class="link__arrow"></span><span class="link__text"><?php echo $link['title'];?></span>
+                </a>
+            <?php endif;?>
         </div>
         <?php if(!empty($featured_post)):?>
             <?php foreach($featured_post as $post): setup_postdata($post);

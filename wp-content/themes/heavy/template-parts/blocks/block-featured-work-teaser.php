@@ -21,9 +21,11 @@ $featured_work = get_sub_field('featured_work');
                 </div>
             <?php endif;?>
             <div class="teaser-header__col">
-                <a class="link--w-arrow-white" href="">
-                    <span class="link__arrow"></span><span class="link__text">See All Posts</span>
-                </a>
+                <?php if(!empty($link)):?>
+                    <a class="link--w-arrow-white" href="<?php echo $link['url'];?>">
+                        <span class="link__arrow"></span><span class="link__text"><?php echo $link['title'];?></span>
+                    </a>
+                <?php endif;?>
             </div>
         </div>
 

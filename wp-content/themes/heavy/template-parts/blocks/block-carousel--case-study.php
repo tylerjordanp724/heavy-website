@@ -17,7 +17,7 @@ $images = get_sub_field('image_gallery');
                 <div class="carousel__image img--wide-cover">
                     <figure>
                         <picture>
-                            <img src="<?php echo $image_url;?>"/>
+                            <img class="b-lazy" data-src="<?php echo $image_url;?>"/>
                         </picture>
                     </figure>
                 </div>

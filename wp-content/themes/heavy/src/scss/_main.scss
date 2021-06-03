@@ -24,3 +24,12 @@ video, embed, iframe {
     position: relative;
     margin-top: 75px;
 }
+
+.b-lazy {
+    opacity: 0;
+    &.b-loaded {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out 0.3s;
+    }
+}
+

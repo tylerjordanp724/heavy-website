@@ -31,7 +31,7 @@ $logo_grid =  get_sub_field('logo_grid');
                     <div class="logo-grid-item col-6 col-md-3 py-3">
                         <figure>
                             <picture>
-                                <img src="<?php echo $logo_url;?>"/>
+                                <img class="b-lazy" data-src="<?php echo $logo_url;?>"/>
                             </picture>
                         </figure>
                     </div>

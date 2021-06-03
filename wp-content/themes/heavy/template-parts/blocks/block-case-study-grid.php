@@ -19,7 +19,7 @@ $case_study = get_sub_field('case_studies_list');
                     <div class="img--wide-cover">
                         <figure class="mb-0">
                             <picture>
-                                <img src="<?php echo $post_thumb;?>"/>
+                                <img class="b-lazy" data-src="<?php echo $post_thumb;?>"/>
                             </picture>
                         </figure>
                     </div>

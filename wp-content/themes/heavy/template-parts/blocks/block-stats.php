@@ -23,7 +23,7 @@ $block_title = get_sub_field('title');
         ?>
             <div class="stat col-md-4 text-center">
                 <?php if(!empty($stat_number)):?>
-                    <h1 class="f--headline"><?php echo $stat_number;?></h1>
+                    <h1 class="f--headline counter-up"><?php echo $stat_number;?></h1>
                 <?php endif;?>
                 <?php if(!empty($stat_text)):?>
                     <p><?php echo $stat_text;?></p>    

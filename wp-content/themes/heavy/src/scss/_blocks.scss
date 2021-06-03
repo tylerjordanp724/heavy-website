@@ -159,9 +159,9 @@ Features
             
         }
 
-        // .feature__overlay {
-        //     padding: 0 !important;
-        // }
+        .feature__overlay {
+            padding: 0 !important;
+        }
 
         @include breakFirst($screen-md) {
             height: 60vw;
@@ -238,7 +238,6 @@ Hero
     position: relative;
     height: auto;
 
-
     .hero__wrapper {
         position: relative;
         top: 94px;
@@ -247,7 +246,7 @@ Hero
             top: 10%;
 
             .hero__col--text h1 {
-                @include font-size(84);
+                @include font-size(120);
             }
         }
     }

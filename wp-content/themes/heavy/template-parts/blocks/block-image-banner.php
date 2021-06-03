@@ -22,7 +22,7 @@
             <div class="img--wide-cover-banner col-md">
                 <figure>
                     <picture>
-                        <img src="<?php echo $image;?>"/>
+                        <img class="b-lazy" data-src="<?php echo $image;?>"/>
                     </picture>
                 </figure>
             </div>

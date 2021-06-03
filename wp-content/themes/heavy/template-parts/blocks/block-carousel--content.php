@@ -19,7 +19,7 @@ $bg_color = get_sub_field('background_color');
                 <div class="carousel__img col-md-6 img--wide-cover">
                     <figure>
                         <picture>
-                            <img src="<?php echo $img;?>">
+                            <img class="b-lazy" data-src="<?php echo $img;?>">
                         </picture>
                     </figure>
                 </div>

@@ -13,7 +13,7 @@ $hero_img = get_sub_field('image');
         <div class="hero__image">
             <figure>
                 <picture>
-                    <img class="d-block m-auto" src="<?php if(!empty($hero_img)){ echo $hero_img; }?>"/>
+                    <img class="d-block m-auto b-lazy" data-src="<?php if(!empty($hero_img)){ echo $hero_img; }?>"/>
                 </picture>
             </figure>
         </div>

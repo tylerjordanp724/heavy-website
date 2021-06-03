@@ -175,10 +175,12 @@ function heavy_loadmore() {
             },
             success: function(data) {
                 if(data) {
-                    button.text('Load more posts').prev().before(data);
+                    b_lazy();
+                    button.text('Load more posts').parent('div').prev().before(data);
                     heavy_loadmore_params.current_page++;
+                    
 
-                    if(heav_loadmore_params.current_page == heavy_loadmore_params.max_page) {
+                    if(heav_loadmore_params.current_page === heavy_loadmore_params.max_page) {
                         button.remove();
                     }
                 } else {
@@ -189,7 +191,16 @@ function heavy_loadmore() {
     });
 }
 
+function counter_up() {
+    $('.counter-up').counterUp();
+}
+
+function b_lazy() {
+    var bLazy = new Blazy();
+}
+
 $(function() {
+    b_lazy();
     header_scroll();
     careers();
     modal_toggle();
@@ -198,4 +209,5 @@ $(function() {
     menu_toggle();
     grid_sort();
     heavy_loadmore();
+    counter_up();
 });

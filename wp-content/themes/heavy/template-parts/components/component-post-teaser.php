@@ -15,7 +15,7 @@ $post_title = get_the_title();
     <div class="post-teaser__img img--wide-cover">
         <figure>
             <picture>
-                <img src="<?php echo $post_thumb;?>"/>
+                <img class="b-lazy" data-src="<?php echo $post_thumb;?>"/>
             </picture>
         </figure>
     </div>

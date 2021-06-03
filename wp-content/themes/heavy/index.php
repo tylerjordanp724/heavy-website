@@ -36,7 +36,7 @@ get_header();
 							<div class="hero__img img--wide-cover col-md-6 px-0">
 								<figure>
 									<picture>
-										<img src="<?php echo $post_thumb;?>"/>
+										<img class="b-lazy" data-src="<?php echo $post_thumb;?>"/>
 									</picture>
 								</figure>
 							</div>
@@ -68,7 +68,7 @@ get_header();
 									<div class="post-teaser__img img--wide-cover">
 										<figure>
 											<picture>
-												<img src="<?php echo $post_thumb;?>"/>
+												<img class="b-lazy" data-src="<?php echo $post_thumb;?>"/>
 											</picture>
 										</figure>
 									</div>
@@ -79,17 +79,21 @@ get_header();
 									</div>
 								</div>
 							<?php endwhile; wp_reset_postdata();?>
-						</div>
+						
 					<div>
 				</div>
 			<?php endif;?>
 		<?php endif; wp_reset_postdata();?>
+		<div class="col-12">
 		<?php
 			global $wp_query; 
 			// don't display the button if there are not enough posts
 			if (  $wp_query->max_num_pages > 1 )
-			echo '<div class="btn btn--gray-1 btn--loadmore m-auto">Load more posts</div>'; // you can use <a> as well
+			echo '<div class="btn text-center btn--gray-1 btn--loadmore m-auto">Load more posts</div>'; // you can use <a> as well
+			else
+			echo '</div>';
 		?>
+		</div>
 		
 
 	</main><!-- #main -->

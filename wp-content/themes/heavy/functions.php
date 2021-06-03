@@ -150,6 +150,7 @@ function heavy_assets() {
 	wp_deregister_script('jquery');
 	
 	wp_enqueue_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", array(), false, true);
+	wp_enqueue_script('waypoints', "http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js", array(), false, true);
 	wp_enqueue_script('video', "https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video.min.js", array(), false, true);
 	wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array(), '1.0.0', true );
 	
@@ -181,11 +182,10 @@ function heavy_loadmore_ajax_handler(){
 	query_posts( $args );
  
 	if( have_posts() ) :
-		$count++;
-		echo '<div class="posts__wrapper d-md-flex justify-content-md-between row px-0 pt-4">';
+		// echo '<div class="posts__wrapper d-md-flex justify-content-md-between row px-0 pt-4">';
 		// run the loop
 		while( have_posts() ): the_post();
-			echo $count;
+			
 			// look into your theme code how the posts are inserted, but you can use your own HTML of course
 			// do you remember? - my example is adapted for Twenty Seventeen theme
 			get_template_part( 'template-parts/content-teaser', get_post_format() );
@@ -194,7 +194,7 @@ function heavy_loadmore_ajax_handler(){
  
  
 		endwhile;
-		echo '</div>';
+		// echo '</div>';
 	endif;
 	die; // here we exit the script and even no wp_reset_query() required!
 }
