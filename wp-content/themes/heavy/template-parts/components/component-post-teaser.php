@@ -11,7 +11,7 @@ $post_date = get_the_date();
 $post_title = get_the_title();
 ?>
 
-<div class="post-teaser col-md-4 mb-5 mb-md-0">
+<div class="post-teaser col-md-4 mb-5 mb-md-0 effect--hover">
     <div class="post-teaser__img img--wide-cover">
         <figure>
             <picture>

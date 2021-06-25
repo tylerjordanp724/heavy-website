@@ -150,7 +150,7 @@ function heavy_assets() {
 	wp_deregister_script('jquery');
 	
 	wp_enqueue_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", array(), false, true);
-	wp_enqueue_script('waypoints', "http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js", array(), false, true);
+	wp_enqueue_script('waypoints', "https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js", array(), false, true);
 	wp_enqueue_script('video', "https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video.min.js", array(), false, true);
 	wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array(), '1.0.0', true );
 	

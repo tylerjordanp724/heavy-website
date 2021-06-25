@@ -41,7 +41,7 @@ get_header();
         <div class="hero hero--case-study-img">
             <figure>
                 <picture>
-                    <img class="b-lazy" data-src="<?php echo $image_url;?>"/>
+                    <img class="b-lazy" src="<?php echo $image_url;?>" data-src="<?php echo $image_url;?>"/>
                 </picture>
             </figure>
         </div>

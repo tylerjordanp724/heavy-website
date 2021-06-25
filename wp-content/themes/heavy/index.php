@@ -58,13 +58,13 @@ get_header();
 						<h3>Stories</h3>
 						<div class="posts__wrapper d-md-flex justify-content-md-between row px-0 pt-4">
 							<?php while(have_posts()): the_post();
-								$post_thumb = get_the_post_thumbnail();
+								$post_thumb = get_the_post_thumbnail_url();
 								$post_author = get_the_author();
 								$post_categories = get_the_category();
 								$post_date = get_the_date();
 								$post_title = get_the_title();
 							?>
-								<div class="post-teaser col-md-6 mb-5">
+								<div class="post-teaser col-md-6 mb-5 effect--hover">
 									<div class="post-teaser__img img--wide-cover">
 										<figure>
 											<picture>

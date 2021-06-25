@@ -13,7 +13,7 @@ $case_study = get_sub_field('case_studies_list');
             <?php foreach($case_study as $post): setup_postdata($post);
                 $post_title = get_the_title($post->ID);
                 $post_link = get_the_permalink($post->ID);
-                $post_thumb = get_the_post_thumbnail($post->ID);
+                $post_thumb = get_the_post_thumbnail_url($post->ID);
             ?>
                 <div class="col-md-4 mb-5">
                     <div class="img--wide-cover">

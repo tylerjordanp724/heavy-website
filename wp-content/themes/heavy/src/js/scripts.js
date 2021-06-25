@@ -86,6 +86,7 @@ function careers() {
 
 function case_study_caorusel() {
     $('.carousel .carousel__container').flickity({
+        cellAlign: 'center',
         wrapAround: true
     });
 } 

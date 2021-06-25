@@ -6,14 +6,14 @@
  *
  * @package heavy
  */
-$featured_image = get_the_post_thumbnail();
+$featured_image = get_the_post_thumbnail_url();
 ?>
 
 <article id="post-<?php the_ID();?>" <?php post_class(); ?>>
 	<div class="post__hero row-outside--lg">
 		<figure>
 			<picture>
-				<?php echo $featured_image;?>
+			<img class="b-lazy" data-src="<?php echo $featured_image;?>"/>
 			</picture>
 		</figure>
 	</div>

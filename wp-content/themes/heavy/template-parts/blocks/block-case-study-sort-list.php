@@ -28,7 +28,7 @@ $count = 0;
             <div class="grid-sizer"></div>
             <?php foreach($case_study as $post): setup_postdata($post);
                 $post_title = get_the_title($post->ID);
-                $post_thumb = get_the_post_thumbnail($post->ID);
+                $post_thumb = get_the_post_thumbnail_url($post->ID);
                 $post_categories = get_the_category($post->ID);
                 $slug = '';
                 $count++;

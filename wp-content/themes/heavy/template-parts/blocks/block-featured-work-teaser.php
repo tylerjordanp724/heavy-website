@@ -34,15 +34,15 @@ $featured_work = get_sub_field('featured_work');
                 <?php foreach($featured_work as $post): setup_postdata($post);
                     $teaser_title = get_field('display_title');
                     $teaser_desc = get_field('short_description');
-                    $teaser_thumbnail = get_the_post_thumbnail();
+                    $teaser_thumbnail = get_the_post_thumbnail_url();
                     $teaser_link = get_the_permalink();
                 ?>
-                    <div class="teaser col-md">
+                    <div class="teaser col-md-6 effect--hover">
                     <?php if(!empty($teaser_thumbnail)):?>
                         <div class="teaser__col teaser__col--img img--wide-cover mb-4">
                             <figure>
                                 <picture>
-                                    <?php echo $teaser_thumbnail;?>
+                                    <img class="b-lazy" data-src="<?php echo $teaser_thumbnail;?>"/>
                                 </picture>
                             </figure>
                         </div>

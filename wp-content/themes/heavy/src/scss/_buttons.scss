@@ -76,6 +76,11 @@ a.link--w-arrow {
         }
     }
 
+    span.link__text {
+        transform: translateX(0);
+        transition: transform 0.3s $cbTrans;
+    }
+
     span.link__arrow:after {
         display: block;
         content: '';
@@ -105,6 +110,12 @@ a.link--w-arrow {
             background-color: $white;
             margin-right: 5px;
             transition: width 0.3s $cbTrans;
+            transform-origin: left center;
+        }
+
+        span.link__text {
+            transform: translateX(0);
+            transition: transform 0.3s $cbTrans;
         }
     
         span.link__arrow:after {
@@ -126,6 +137,10 @@ a.link--w-arrow {
             span.link__arrow {
                 width: 15px;
             }
+
+            span.link__text {
+                transform: translateX(5px);
+            }
     
             span.link__arrow:after {
                 transform: translate(10px, -2px) rotate(45deg);
@@ -139,6 +154,10 @@ a.link--w-arrow {
 
         span.link__arrow {
             width: 15px;
+        }
+
+        span.link__text {
+            transform: translateX(5px);
         }
 
         span.link__arrow:after {

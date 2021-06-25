@@ -272,9 +272,13 @@ Hero
     &--case-study-video,
     &--video {
         position: relative;
-        height: 85vh;
+        height: 400px;
         overflow: hidden;
         margin-top: 83px;
+
+        @include breakFirst($screen-md) {
+            height: 85vh;
+        }
 
         .hero__overlay {
             position: absolute;
@@ -304,6 +308,7 @@ Hero
         position: relative;
         height: fit-content;
         overflow: hidden;
+        margin-top: 83px;
 
         @include breakFirst($screen-sm) {
             margin-top: 83px; 
@@ -361,7 +366,12 @@ Hero
 .hero--video {
     margin-top: -83px;
     position: relative;
-    height: 100vh;
+    height: 400px;
+
+    @include breakFirst($screen-md) {
+        height: 100vh;
+    }
+
 
     &:after {
         content: '';
@@ -432,7 +442,7 @@ Post Video
 }
 
 .video .video__container {
-    padding-bottom: 48.5vw;
+    padding-bottom: 56.25%;
 }
 
 

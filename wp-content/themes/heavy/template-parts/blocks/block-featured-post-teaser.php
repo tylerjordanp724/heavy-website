@@ -24,12 +24,16 @@ $featured_post = get_sub_field('featured_post');
             <?php foreach($featured_post as $post): setup_postdata($post);
                 $post_title = get_the_title($post);
                 $post_url = get_the_permalink($post);
-                $post_thumbnail = get_the_post_thumbnail($post);
+                $post_thumbnail = get_the_post_thumbnail_url($post);
             ?>
-                <div class="teaser teaser--flex d-md-flex align-items-md-start">
+                <div class="teaser teaser--flex d-md-flex align-items-md-start effect--hover">
                     <div class="teaser__col teaser__col--text col-md-5 mb-4">
                         <?php if(!empty($post_title)):?>
-                            <a href="" class="f--label row-outside--sm">Category</a>
+                            <?php if(!empty(get_the_category())):?>
+                                <?php foreach(get_the_category() as $category): ?>
+                                    <span class="f--label row-outside--sm"><?php echo $category->name;?></span>
+                                <?php endforeach;?>
+                            <?php endif;?>
                             <h3 class="f--headline"><?php echo $post_title;?></h3>    
                         <?php endif;?>
                         <?php if(!empty($post_url)):?>
@@ -42,7 +46,7 @@ $featured_post = get_sub_field('featured_post');
                         <div class="teaser__col teaser__col--img img--wide-cover col-md-7">
                             <figure>
                                 <picture>
-                                    <?php echo $post_thumbnail;?>
+                                <img class="b-lazy" data-src="<?php echo $post_thumbnail;?>"/>
                                 </picture>
                             </figure>
                         </div>
