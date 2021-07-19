@@ -56,9 +56,10 @@
         <?php get_template_part('template-parts/blocks/block', 'text-banner');?>
     <?php elseif($content_block === 'stats'):?>
         <?php get_template_part('template-parts/blocks/block', 'stats');?>
+    <?php elseif($content_block === 'content_card'):?>
+        <?php get_template_part('template-parts/blocks/block','content-card');?>
     <?php elseif($post_content_block === 'video'):?>
         <?php get_template_part('template-parts/blocks/block', 'video');?>
-    
     
     <?php endif;?>
 <?php endwhile; endif;?>

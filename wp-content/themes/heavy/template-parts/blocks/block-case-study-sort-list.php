@@ -79,7 +79,7 @@ $count = 0;
 
 
             ?>
-                <div class="grid-item grid-item--<?php echo $grid_size;?> <?php if(!empty($grid_size_mod)) {echo 'grid-item--'.$grid_size.'-'.$grid_size_mod.'';}?> <?php echo $slug;?>">
+                <div class="grid-item grid-item--<?php echo $grid_size;?> <?php if(!empty($grid_size_mod)) {echo 'grid-item--'.$grid_size.'-'.$grid_size_mod.'';}?> <?php echo $slug;?> effect--hover">
                     <?php if(!empty($post_thumb)):?>
                         <div class="grid-item__img img--wide-cover">
                             <figure>

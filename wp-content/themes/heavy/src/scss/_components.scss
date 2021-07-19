@@ -93,6 +93,20 @@
     
 }
 
+.content-card {
+    .content-card__img figure picture {
+        padding-bottom: 56.25;
+
+        @include breakFirst($screen-sm) {
+            padding-bottom: 45vw;
+
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+}
+
 /*
 Case Studies
 ==================

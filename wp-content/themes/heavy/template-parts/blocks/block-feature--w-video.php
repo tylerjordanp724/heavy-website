@@ -11,7 +11,7 @@ $poster_image = get_sub_field('poster_image');
 ?>
 
 <div class="feature feature--w-video row-inside--lg px-4 p-md-0">
-    <div class="feature__video mb-3 mb-md-0" data-vide-bg="mp4:<?php echo $feature_video;?>, poster:<?php echo $poster_image['url'];?>" data-vide-options="loop: true, muted: true, posterType:<?php echo $poster_image['subtype'];?>"></div>
+    <div class="feature__video mb-3 mb-md-0" data-vide-bg="mp4:<?php echo $feature_video;?>,poster:<?php echo $poster_image['url'];?>" data-vide-options="className:'vide-player' loop: true muted: true posterType:<?php echo $poster_image['subtype'];?>"></div>
     <?php if(!empty($feature_text)):?>
         <div class="feature__overlay d-none d-md-flex align-items-end">
             <div class="feature__col col-md-5 m-md-auto">

@@ -15,7 +15,7 @@ $case_study = get_sub_field('case_studies_list');
                 $post_link = get_the_permalink($post->ID);
                 $post_thumb = get_the_post_thumbnail_url($post->ID);
             ?>
-                <div class="col-md-4 mb-5">
+                <div class="collection__grid-item effect--hover col-md-4 mb-5">
                     <div class="img--wide-cover">
                         <figure class="mb-0">
                             <picture>

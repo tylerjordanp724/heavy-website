@@ -21,10 +21,9 @@ get_header();
     $poster_image = $hero['poster_image'];   
 ?>
     <!-- case study hero -->
-    
     <?php if($hero_type === 'video'):?>
         <?php if(!empty($video_url)):?>
-            <div class="hero hero--case-study-video" data-vide-bg="mp4:<?php echo $video_url;?>, poster:<?php echo $poster_image['url'];?>" data-vide-options="loop: true, muted: true, posterType:<?php echo $poster_image['subtype'];?>">
+            <div class="hero hero--case-study-video" data-vide-bg="mp4:<?php echo $video_url;?>, poster:<?php echo $poster_image['url'];?>" data-vide-options="className:'vide-player' loop: true muted: true posterType:<?php echo $poster_image['subtype'];?>">
                 <?php if(!empty($vimeo_id)):?>
                     <div class="hero__overlay d-flex align-items-center justify-content-center">
                         <div class="btn--play btn--modal" data-content="video">
@@ -46,7 +45,6 @@ get_header();
             </figure>
         </div>
     <?php endif;?>
-
 <?php endif;?>
 
 <?php if(!empty($display_title)):
